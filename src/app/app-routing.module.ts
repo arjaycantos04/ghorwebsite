@@ -24,6 +24,26 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
+  {
+    path: 'dashboardpages',
+    loadChildren: () => import('./dashboardpages/dashboardpages.module').then( m => m.DashboardpagesPageModule)
+  },
+  {
+    path: 'pets',
+    loadChildren: () => import('./dashboardpages/pets/pets.module').then( m => m.PetsPageModule)
+  },
+  {
+    path: 'new',
+    loadChildren: () => import('./dashboardpages/news/news.module').then( m => m.NewsPageModule)
+  },
+  {
+    path: 'favorite',
+    loadChildren: () => import('./dashboardpages/favorite/favorite.module').then( m => m.FavoritePageModule)
+  },
+  {
+    path: 'history',
+    loadChildren: () => import('./dashboardpages/history/history.module').then( m => m.HistoryPageModule)
+  },
 ];
 
 @NgModule({
