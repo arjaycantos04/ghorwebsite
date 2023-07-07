@@ -1,3 +1,9 @@
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 45%;
+    margin:auto;
+   }
+}
 img {
     height: 60px;
     margin-top: 10px;
@@ -6,8 +12,8 @@ img {
 
 ion-grid {
     padding: 10px;
-    background-color: rgb(113, 193, 251);
-    margin: 10px;
+    background-color: rgb(154, 213, 255);
+    margin: 20px;
     border-radius: 10px;
   }
 
@@ -23,9 +29,10 @@ ion-row {
   }
 
   ion-button {
-    height: 20px;
+    height: 30px;
   }
 
   h4 {
     text-align: center;
   }
+
