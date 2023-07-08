@@ -8,13 +8,19 @@
     <ion-content>
       <ion-list>
         <ion-menu-toggle>
+          <ion-item routerLink="/dashboard">
+            <ion-icon name="paw" slot="start"></ion-icon>
+            <ion-label>Dashboard</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
           <ion-item routerLink="/pets">
             <ion-icon name="paw" slot="start"></ion-icon>
             <ion-label>Pets</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
-          <ion-item routerLink="news">
+          <ion-item routerLink="/news">
             <ion-icon name="today" slot="start"></ion-icon>
             <ion-label>News</ion-label>
           </ion-item>

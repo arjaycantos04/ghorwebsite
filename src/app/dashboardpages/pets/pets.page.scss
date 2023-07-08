@@ -1,0 +1,24 @@
+@media only screen and (min-width: 992px) {
+    .container {
+      width: 45%;
+      margin:auto;
+     }
+  }
+  *{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  img{
+    margin-top: 10px;
+  }
+  ion-searchbar{
+    margin-right: 10px;
+    
+  }
+  ion-select{
+    width: 60px;
+  }
+  
+  ion-item {
+    --padding-start: 0;
+  }

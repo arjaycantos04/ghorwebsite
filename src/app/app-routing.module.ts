@@ -33,7 +33,7 @@ const routes: Routes = [
     loadChildren: () => import('./dashboardpages/pets/pets.module').then( m => m.PetsPageModule)
   },
   {
-    path: 'new',
+    path: 'news',
     loadChildren: () => import('./dashboardpages/news/news.module').then( m => m.NewsPageModule)
   },
   {
