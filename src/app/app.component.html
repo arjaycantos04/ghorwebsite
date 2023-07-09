@@ -9,7 +9,7 @@
       <ion-list>
         <ion-menu-toggle>
           <ion-item routerLink="/dashboard">
-            <ion-icon name="paw" slot="start"></ion-icon>
+            <ion-icon name="today" slot="start"></ion-icon>
             <ion-label>Dashboard</ion-label>
           </ion-item>
         </ion-menu-toggle>
@@ -37,7 +37,12 @@
             <ion-label>History</ion-label>
           </ion-item>
         </ion-menu-toggle>
-
+        <ion-menu-toggle>
+        <ion-item routerLink="/login">
+          <ion-icon name="log-out" slot="start"></ion-icon>
+          <ion-label>Log-out</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
       </ion-list>
     </ion-content>
   </ion-menu>

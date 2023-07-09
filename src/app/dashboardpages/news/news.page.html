@@ -1,9 +1,15 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>news</ion-title>
-    <ion-button slot="start">
-      <ion-menu-button menu="main-menu"></ion-menu-button>
-    </ion-button> 
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button menu="main-menu"></ion-menu-button>
+      </ion-buttons>
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center;">
+          <img src="../../assets/icon/logo.png" style="height: 50px; margin-right: 8px; margin-bottom: 8px;">
+          <ion-title size="small">SagiPet</ion-title>
+        </div>
+      </div>
   </ion-toolbar>
 </ion-header>
 
@@ -13,4 +19,43 @@
       <ion-title size="large">news</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-card-content>
+    <ion-card-header>
+      <ion-card-title>News</ion-card-title>
+      <ion-card-subtitle>See here for new updates and announcements</ion-card-subtitle>
+    </ion-card-header>
+
+
+    <div style="align-items: center; justify-content: space-between;">
+      <div style="align-items: center;">
+        <ion-card>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>New Pets</ion-card-title>
+            <ion-card-subtitle>Arrival of new pets</ion-card-subtitle>
+            <ion-card-subtitle>Pets available for adoption are now up, see yourself and find your new buddy.</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+        
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>New Pets</ion-card-title>
+          <ion-card-subtitle>Arrival of new pets</ion-card-subtitle>
+          <ion-card-subtitle>Pets available for adoption are now up, see yourself and find your new buddy.</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>New Pets</ion-card-title>
+            <ion-card-subtitle>Arrival of new pets</ion-card-subtitle>
+            <ion-card-subtitle>Pets available for adoption are now up, see yourself and find your new buddy.</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+    </div>
+    </div>
+  </ion-card-content>
+
 </ion-content>

@@ -1,0 +1,41 @@
+@media only screen and (min-width: 992px) {
+    .container {
+      width: 45%;
+      margin:auto;
+     }
+  }
+  *{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+  img{
+    margin-top: 10px;
+  }
+
+
+  ion-select{
+    width: 60px;
+  }
+
+  ion-select-option{
+    width: 60px;
+    
+  }
+  
+  ion-item {
+    --padding-start: 0;
+  }
+
+  ion-card{
+    font-size:x-small;
+    width:150px;
+    text-align: center;
+  }
+
+  ion-card-content{
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  margin: 20px;
+  border-radius: 10px;
+  }
+

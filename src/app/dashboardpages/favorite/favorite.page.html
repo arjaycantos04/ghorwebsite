@@ -1,16 +1,67 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>favorite</ion-title>
-    <ion-button slot="start">
-      <ion-menu-button menu="main-menu"></ion-menu-button>
-    </ion-button>  
-  </ion-toolbar>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button menu="main-menu"></ion-menu-button>
+      </ion-buttons>
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center;">
+          <img src="../../assets/icon/logo.png" style="height: 50px; margin-right: 8px; margin-bottom: 8px;">
+          <ion-title size="small">SagiPet</ion-title>
+        </div>
+      </div>
+      <ion-buttons slot="end">
+        <ion-select aria-label="filter" interface="popover" placeholder="Filter">
+          <ion-select-option value="cats">Cats</ion-select-option>
+          <ion-select-option value="dogs">Dogs</ion-select-option>
+          <ion-select-option value="aged">Aged</ion-select-option>
+        </ion-select>
+
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">favorite</ion-title>
+      <ion-title size="large" slot="end">pets</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-card-content>
+    <ion-card-header>
+      <ion-card-title>Favorites</ion-card-title>
+      <ion-card-subtitle>See here your desired pets</ion-card-subtitle>
+    </ion-card-header>
+
+
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center;">
+    <ion-card>
+      <ion-icon name="heart" slot="end"></ion-icon>
+        <img src="../../assets/icon/dog1.jpg" />
+        <ion-card-header>
+          <ion-card-title>Maxi</ion-card-title>
+           <ion-card-subtitle>
+          Here's a small text description for the card content. Nothing more, nothing less.
+        </ion-card-subtitle>
+        </ion-card-header>
+    </ion-card>
+    
+    <ion-card>
+      <img src="../../assets/icon/dog1.jpg" />
+      <ion-card-header>
+        <ion-card-title>Maxi</ion-card-title>
+         <ion-card-subtitle>
+        Here's a small text description for the card content. Nothing more, nothing less.
+      </ion-card-subtitle>
+      </ion-card-header>
+  </ion-card>
+</div>
+</div>
+  </ion-card-content>
+   
 </ion-content>
+
