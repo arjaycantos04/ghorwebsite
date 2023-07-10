@@ -74,8 +74,11 @@ h1 {
   text-align: center;
 }
 
-ion-content {
-  --background: url(../../assets/icon/1.jpg) no-repeat center/ cover;
+ion-toolbar{
+  --background: linear-gradient(to bottom, #43aeff, #43aeff);
+}
+ion-content{
+  --background: linear-gradient(to bottom, #43aeff, #ffffff);
 }
 
 .or {

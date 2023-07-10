@@ -12,5 +12,18 @@
     margin-top: 10px;
     margin-left: 10px;
   }
-  
+  ion-toolbar{
+    --background: linear-gradient(to bottom, #43aeff, #43aeff);
+  }
+  ion-content{
+    --background: linear-gradient(to bottom, #43aeff, #ffffff);
+  }
+  .background-container {
+    background-image: url(../../assets/icon/dashbackground.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45vh;
+    margin-top: -1px;
+  }
   

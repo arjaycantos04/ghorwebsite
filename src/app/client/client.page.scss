@@ -16,7 +16,7 @@ img {
 
 ion-grid {
     padding: 10px;
-    background-color: rgb(154, 213, 255);
+    background-color: rgb(255, 255, 255);
     margin: 20px;
     border-radius: 10px;
   }
@@ -27,9 +27,14 @@ ion-row {
     margin: 10px;
     border-radius: 10px;
   }
-
+  ion-toolbar{
+    --background: linear-gradient(to bottom, #43aeff, #43aeff);
+  }
+  ion-content{
+    --background: linear-gradient(to bottom, #43aeff, #ffffff);
+  }
   ion-content {
-    --background: url(../../assets/icon/1.jpg) no-repeat center/ cover;
+    --background: linear-gradient(to bottom, #43aeff, #b1b5e2);
   }
 
   ion-button {

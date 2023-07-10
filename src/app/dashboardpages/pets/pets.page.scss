@@ -12,7 +12,12 @@
     margin-top: 10px;
   }
 
-
+  ion-toolbar{
+    --background: linear-gradient(to bottom, #43aeff, #43aeff);
+  }
+  ion-content{
+    --background: linear-gradient(to bottom, #43aeff, #ffffff);
+  }
   ion-select{
     width: 60px;
   }
@@ -27,9 +32,9 @@
   }
 
   ion-card{
-    font-size:x-small;
     width:150px;
     text-align: center;
+
   }
 
   ion-card-content{
@@ -39,3 +44,7 @@
   border-radius: 10px;
   }
 
+  ion-button{
+    height: 20px;
+    width: 60px;
+  }
