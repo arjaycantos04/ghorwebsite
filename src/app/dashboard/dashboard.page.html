@@ -1,18 +1,68 @@
-<ion-header>
-  <ion-toolbar>
-    <div style="display: flex; align-items: center; justify-content: space-between;">
+
+  <ion-header [translucent]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button menu="main-menu"></ion-menu-button>
+      </ion-buttons>
+      
       <div style="display: flex; align-items: center;">
         <img src="../../assets/icon/logo.jpg" style="height: 50px; margin-right: 8px; margin-bottom: 8px;">
-        <ion-title size="small">SagiPet: Don't Shop Just Adopt</ion-title>
       </div>
-    </div>
-    <ion-button slot="start">
-    <ion-menu-button fill="clear" menu="main-menu"></ion-menu-button>
-  </ion-button>  
-  </ion-toolbar>
+
+
+      <ion-buttons slot="end">
+        <div class="button-container">
+          <ion-grid [fixed]="true">
+            <ion-row>
+              <ion-col size="1.5">
+                <ion-select aria-label="Fruit" interface="popover" placeholder="What we are">
+                  <ion-select-option value="apples">Non-Government Organization</ion-select-option>
+                  <ion-select-option value="oranges">Oranges</ion-select-option>
+                  <ion-select-option value="bananas">Bananas</ion-select-option>
+                </ion-select>
+              </ion-col>
+        
+              <ion-col size="1.5">
+                <ion-select aria-label="Fruit" interface="popover" placeholder="What we do">
+                  <ion-select-option value="apples">Rehabilitate</ion-select-option>
+                  <ion-select-option value="oranges">Rehome</ion-select-option>
+                  <ion-select-option value="bananas">Rehome</ion-select-option>
+                </ion-select>
+              </ion-col>
+        
+              <ion-col size="1.9">
+                <ion-select aria-label="Fruit" interface="popover" placeholder="What you can do">
+                  <ion-select-option value="apples">Adopt a Dog</ion-select-option>
+                  <ion-select-option value="oranges">Adopt a Cat</ion-select-option>
+                  <ion-select-option value="bananas">Make a Donation</ion-select-option>
+                </ion-select>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-buttons>
+      
+
+      <ion-buttons slot="end">
+        <div class="buttonss">
+          <ion-button fill="solid">Donate</ion-button>
+          <ion-button routerLink="/login" fill="outline">Login</ion-button>
+        </div>
+        </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 </ion-header>
 
+
 <ion-content>
-  <div class="background-container">
-  </div>
+  <section>
+    <div class="content">
+      <span class="title">Don't Shop, Just Adopt</span>
+      <h1>Find a <span>new </span>Pet for you!!</h1>
+      <p>You can help save lives of Aspin and Ascats, help them find a new home to build and bring joy into</p>
+    </div>
+  </section>
+
 </ion-content>
+

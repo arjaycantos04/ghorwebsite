@@ -21,7 +21,7 @@
       <ion-checkbox></ion-checkbox> Remember me
       <a class="ion-float-right">Forgot Password?</a>
       <br><br><br>
-      <ion-button routerLink="/client">Login</ion-button>
+      <ion-button routerLink="/dashboard">Login</ion-button>
       
       <div class = "or">
         <div class ="orline"></div>
@@ -29,12 +29,17 @@
         <div class ="orline"></div>
       </div>
 
-      <ion-button color="medium"><ion-icon name="logo-google"></ion-icon>Continue with Google</ion-button>
+      <ion-button color="medium" (click)="signInWithGoogle()"><ion-icon name="logo-google"></ion-icon>Continue with Google</ion-button>
     
-      <div class = "do"></div>
-        <div class ="dotext"> Don't have an account? </div>
-        <a class="ion-float-right" routerLink="/sign-up">Sign up</a>
-
+      <div class="center-container">
+        <div class="align-center">
+          <div class="do"></div>
+          <div class="dotext">Don't have an account?</div>
+          <a class="ion-float-right" routerLink="/sign-up">Sign up</a>
+        </div>
+      </div>
+      
+      
     </ion-list>
   </div>
   

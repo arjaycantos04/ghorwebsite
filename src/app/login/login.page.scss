@@ -96,3 +96,17 @@ background-color:black ;
 .ortext{
   padding: 40px 5px;
 }
+
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+

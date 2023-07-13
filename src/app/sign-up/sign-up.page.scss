@@ -43,7 +43,10 @@
     text-decoration: none;
   }
   ion-toolbar{
-    background-color: blue;
+    --background: linear-gradient(to bottom, #43aeff, #43aeff);
+  }
+  ion-content{
+    --background: linear-gradient(to bottom, #43aeff, #ffffff);
   }
   ion-list {
     padding: 50px;
@@ -69,9 +72,6 @@ ion-segment{
     text-align: center;
   }
   
-  ion-content {
-    --background: url(../../assets/icon/1.jpg) no-repeat center/ cover;
-  }
   
   .or {
     display: flex;

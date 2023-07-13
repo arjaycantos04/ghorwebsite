@@ -6,6 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./news.page.scss'],
 })
 export class NewsPage implements OnInit {
+  currentCard: number = 0;
+
+  closeCard(cardNumber: number) {
+    this.currentCard = cardNumber;  
+  }
+
+  
+  
 
   constructor() { }
 
