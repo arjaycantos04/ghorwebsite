@@ -14,38 +14,53 @@
   <div class="container">
     <ion-list>
       <h1>Sign Up</h1>
-      <div class ="signup a">
-      <ion-input label="First Name" label-placement="floating" fill="solid" placeholder=""></ion-input>
-      <ion-input label="Last Name" label-placement="floating" fill="solid" placeholder=""></ion-input>
-      </div>
-    <div class ="signup c">
-      <ion-input label="Phone" label-placement="floating" fill="solid" placeholder=""></ion-input>
-      <ion-input label="Email Address" label-placement="floating" fill="solid" placeholder=""></ion-input> 
-    </div>
+      <!-- <form [formGroup]="signupForm"> -->
+        <div class="name-inputs">
+          <ion-item>
+            <ion-label position="floating">First Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input fill="outline" formControlName="fname" placeholder="" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Last Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input fill="outline" formControlName="lname" placeholder="" required></ion-input>
+          </ion-item>
+        </div>
+        <ion-item>
+          <ion-label position="floating">Phone <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input fill="outline" formControlName="phone" placeholder="" required></ion-input>
+        </ion-item>
+        <div class="username-email-inputs">
+          <ion-item>
+            <ion-label position="floating">Username <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input fill="outline" formControlName="username" placeholder="" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Email <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input fill="outline" formControlName="email" value="hi@ionic.io" required></ion-input>
+          </ion-item>
+        </div>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="stacked">Password <ion-text color="danger">*</ion-text></ion-label>
+                <ion-input type="password" formControlName="password" fill="outline" value="password" required></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label position="stacked">Confirm Password <ion-text color="danger">*</ion-text></ion-label>
+                <ion-input type="password" formControlName="confirmPassword" fill="outline" value="password" required></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      <!-- </form> -->
 
-    <div class = "or">
-      <div class ="orline"></div>
-      <div class ="ortext">Address</div>
-      <div class ="orline"></div>
-    </div>
-    <div class ="signup d">
-      <ion-input label="Street" label-placement="floating" fill="solid" placeholder=""></ion-input>
-      <ion-input label="Barangay" label-placement="floating" fill="solid" placeholder=""></ion-input> 
-    </div>
-    <div class ="signup e">
-      <ion-input label="Municipality " label-placement="floating" fill="solid" placeholder=""></ion-input>
-      <ion-input label="Province" label-placement="floating" fill="solid" placeholder=""></ion-input> 
-    </div>
-    <ion-input label="Username " label-placement="floating" fill="solid" placeholder=""></ion-input>
-   <br>
-    <div class ="signup f">
-      <ion-input label="Password " type="Password" value="Password" label-placement="floating" fill="solid"></ion-input>
-      <ion-input label="Confirm Password" type="Password" value="Password" label-placement="floating" fill="solid"></ion-input> 
-    </div>
-
-      <ion-button routerLink="/login">Sign-up</ion-button>
+      <ion-button>Sign-up</ion-button>
       <a class="ion-float-left">Already have an account?</a>
     </ion-list>
   </div>
-  
 </ion-content>
+
+

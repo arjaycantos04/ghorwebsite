@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pets.page.scss'],
 })
 export class PetsPage implements OnInit {
+  isModalOpen = false;
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
+  
+
 
   constructor() { }
 

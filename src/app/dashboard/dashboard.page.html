@@ -1,55 +1,20 @@
 
   <ion-header [translucent]="true">
-  <ion-header>
+  <ion-header collapse="fade">
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-menu-button menu="main-menu"></ion-menu-button>
       </ion-buttons>
-      
+
       <div style="display: flex; align-items: center;">
         <img src="../../assets/icon/logo.jpg" style="height: 50px; margin-right: 8px; margin-bottom: 8px;">
+        <ion-title>Sagipet: Don't Shop, Just Adopt</ion-title>
       </div>
 
-
-      <ion-buttons slot="end">
-        <div class="button-container">
-          <ion-grid [fixed]="true">
-            <ion-row>
-              <ion-col size="1.5">
-                <ion-select aria-label="Fruit" interface="popover" placeholder="What we are">
-                  <ion-select-option value="apples">Non-Government Organization</ion-select-option>
-                  <ion-select-option value="oranges">Oranges</ion-select-option>
-                  <ion-select-option value="bananas">Bananas</ion-select-option>
-                </ion-select>
-              </ion-col>
-        
-              <ion-col size="1.5">
-                <ion-select aria-label="Fruit" interface="popover" placeholder="What we do">
-                  <ion-select-option value="apples">Rehabilitate</ion-select-option>
-                  <ion-select-option value="oranges">Rehome</ion-select-option>
-                  <ion-select-option value="bananas">Rehome</ion-select-option>
-                </ion-select>
-              </ion-col>
-        
-              <ion-col size="1.9">
-                <ion-select aria-label="Fruit" interface="popover" placeholder="What you can do">
-                  <ion-select-option value="apples">Adopt a Dog</ion-select-option>
-                  <ion-select-option value="oranges">Adopt a Cat</ion-select-option>
-                  <ion-select-option value="bananas">Make a Donation</ion-select-option>
-                </ion-select>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </div>
-      </ion-buttons>
+      <div class="announcement" slot="end">
+        <ion-button routerLink="/news" color="blue" shape="round" fill="solid">Announcement</ion-button>
+      </div>
       
-
-      <ion-buttons slot="end">
-        <div class="buttonss">
-          <ion-button fill="solid">Donate</ion-button>
-          <ion-button routerLink="/login" fill="outline">Login</ion-button>
-        </div>
-        </ion-buttons>
     </ion-toolbar>
   </ion-header>
 </ion-header>
@@ -57,6 +22,7 @@
 
 <ion-content>
   <section>
+    <div class="background-design"></div>
     <div class="content">
       <span class="title">Don't Shop, Just Adopt</span>
       <h1>Find a <span>new </span>Pet for you!!</h1>
@@ -64,5 +30,56 @@
     </div>
   </section>
 
+
+
+
+
+<!-- <div class="cards">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Adopt now!!</ion-card-title>
+      <ion-card-subtitle>Get yourself a new loyal buddy</ion-card-subtitle>
+    </ion-card-header>
+    
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>Maxi</ion-label>
+        </ion-item>
+  
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>Juliet</ion-label>
+        </ion-item>
+  
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>Romeo</ion-label>
+        </ion-item>
+  
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>Kitty</ion-label>
+        </ion-item>
+
+        <ion-button routerLink="/pets" slot="center" color="dark" shape="round" fill="outline">See More</ion-button>
+    
+      </ion-list>
+    
+  </ion-card>
+</div>
+
+
 </ion-content>
 
+
+
+ -->

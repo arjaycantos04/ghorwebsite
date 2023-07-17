@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { SignUpPage } from './sign-up.page';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 const routes: Routes = [
   {
     path: '',
@@ -11,7 +13,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes), ReactiveFormsModule],
   exports: [RouterModule],
 })
 export class SignUpPageRoutingModule {}

@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-header>
+  <ion-header collapse="fade">
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-menu-button menu="main-menu"></ion-menu-button>
@@ -20,8 +20,9 @@
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  
 </ion-header>
+
+
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -30,42 +31,135 @@
     </ion-toolbar>
   </ion-header>
 
+  <section>
+    <div class="background-design"></div>
+    <div class="content">
+    </div>
+  </section>
+
   <ion-card-content>
     <ion-card-header>
-      <ion-card-title>Favorites</ion-card-title>
-      <ion-card-subtitle>See here your desired pets</ion-card-subtitle>
+      <div class="content">
+        <h1>Find a <span>new </span>Pet for you!!</h1>
+        <ion-card-subtitle>See here your desired pets</ion-card-subtitle>
+      </div>
     </ion-card-header>
 
+        
+    <ion-grid>
+      <ion-row>  
 
-    <div style="display: flex; align-items: center; justify-content: space-between;">
-      <div style="display: flex; align-items: center;">
-    <ion-card>
-      <ion-icon name="heart" size="large" style="color: rgb(171, 47, 47);"></ion-icon>
-      <img src="../../assets/icon/dog1.jpg" />
-      <ion-card-header>
-        <ion-card-title>Maxi</ion-card-title>
-        <ion-card-subtitle>
-          Gender : Female
-          Age    : 3yrs old
-        </ion-card-subtitle>
-        </ion-card-header>
-        <div style="width: 150px"><ion-button size=""color="success">Adopt</ion-button><ion-button size="small"color="danger">Remove</ion-button></div>
-    </ion-card>
+        <ion-col>  
+        <ion-card button class="fixed-card">
+          <ion-icon size="small" style="color: rgb(171, 47, 47);"></ion-icon>
+          <img src="../../assets/icon/d3.png" class="fixed-image"/>
+          <ion-card-header>
+            <ion-card-title>Maxi</ion-card-title>
+            <ion-card-subtitle>
+              Gender: Female
+              Age: 3yrs old
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-button routerLink="/client" shape="round" color="success">Adopt</ion-button>
+          <ion-button shape="round" color="danger">Remove</ion-button>
+        </ion-card>
+       </ion-col> 
+
+       <ion-col> 
+        <ion-card button class="fixed-card">
+          <ion-icon size="small"></ion-icon>
+          <img src="../../assets/icon/d1.png" class="fixed-image" />
+          <ion-card-header>
+            <ion-card-title>Maxi</ion-card-title>
+            <ion-card-subtitle>
+              Gender: Female
+              Age: 3yrs old
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-button routerLink="/client" shape="round" color="success">Adopt</ion-button>
+          <ion-button shape="round" color="danger">Remove</ion-button>
+        </ion-card>
+      </ion-col>
+        
+
+      <ion-col> 
+        <ion-card button class="fixed-card no-top-margin">
+          <ion-icon size="small"></ion-icon>
+          <img src="../../assets/icon/d2.png" class="fixed-image" />
+          <ion-card-header>
+            <ion-card-title>Maxi</ion-card-title>
+            <ion-card-subtitle>
+              Gender: Female
+              Age: 3yrs old
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-button routerLink="/client" shape="round" color="success">Adopt</ion-button>
+          <ion-button shape="round" color="danger">Remove</ion-button>
+        </ion-card>
+      </ion-col>
+
+
+      </ion-row>
+    </ion-grid>    
+
+
+    <ion-grid>
+      <ion-row>  
+
+        <ion-col>  
+        <ion-card button class="fixed-card">
+          <ion-icon size="small" style="color: rgb(171, 47, 47);"></ion-icon>
+          <img src="../../assets/icon/d3.png" class="fixed-image"/>
+          <ion-card-header>
+            <ion-card-title>Maxi</ion-card-title>
+            <ion-card-subtitle>
+              Gender: Female
+              Age: 3yrs old
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-button routerLink="/client" shape="round" color="success">Adopt</ion-button>
+          <ion-button shape="round" color="danger">Remove</ion-button>
+        </ion-card>
+       </ion-col> 
+
+       <ion-col> 
+        <ion-card button class="fixed-card">
+          <ion-icon size="small"></ion-icon>
+          <img src="../../assets/icon/d1.png" class="fixed-image" />
+          <ion-card-header>
+            <ion-card-title>Maxi</ion-card-title>
+            <ion-card-subtitle>
+              Gender: Female
+              Age: 3yrs old
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-button routerLink="/client" shape="round" color="success">Adopt</ion-button>
+          <ion-button shape="round" color="danger">Remove</ion-button>
+        </ion-card>
+      </ion-col>
+        
+
+      <ion-col> 
+        <ion-card button class="fixed-card no-top-margin">
+          <ion-icon size="small"></ion-icon>
+          <img src="../../assets/icon/d2.png" class="fixed-image" />
+          <ion-card-header>
+            <ion-card-title>Maxi</ion-card-title>
+            <ion-card-subtitle>
+              Gender: Female
+              Age: 3yrs old
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-button routerLink="/client" shape="round" color="success">Adopt</ion-button>
+          <ion-button shape="round" color="danger">Remove</ion-button>
+        </ion-card>
+      </ion-col>
+
+
+      </ion-row>
+    </ion-grid>    
     
-    <ion-card>
-      <ion-icon name="heart" size="large" style="color: rgb(171, 47, 47);"></ion-icon>
-      <img src="../../assets/icon/dog1.jpg" />
-      <ion-card-header>
-        <ion-card-title>Maxi</ion-card-title>
-         <ion-card-subtitle>
-          Gender : Female
-          Age    : 3yrs old
-      </ion-card-subtitle>
-      </ion-card-header>
-      <div style="width: 150px"><ion-button size=""color="success">Adopt</ion-button><ion-button size="small"color="danger">Remove</ion-button></div>
-  </ion-card>
-</div>
-</div>
+
   </ion-card-content>
    
 </ion-content>

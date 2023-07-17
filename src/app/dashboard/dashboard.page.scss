@@ -12,15 +12,23 @@
     margin-top: 10px;
     margin-left: 10px;
   }
+
+
   ion-toolbar{
-    
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: none;
     display: flex;
     justify-content: space-between;
-    --background: linear-gradient(to bottom, #4d71d7, #4d71d7);
+    --background: transparent;
   }
+
+  
   ion-content{
-    --background: linear-gradient(to bottom, #4d71d7, #ffffff);
+    --background: linear-gradient(to bottom, #e8e8e8, #6a8ce8);
   }
+
   .background-container {
     background-image: url(../../assets/icon/dashbackground.jpg);
     background-position: top center;
@@ -58,7 +66,7 @@
     -webkit-text-fill-color: transparent;
 }
 .content h1{
-    color: #ffffff;
+    color: #8975fb;
     font-size: 75px;
     font-weight: 900;
     line-height: 90px;
@@ -80,4 +88,20 @@
   align-items: end;
   border-radius: 10px;
 }
+
+.background-design{
+    height: 470px;
+    width: 1550px;
+    background: blue;
+    background: linear-gradient(90deg, #fbfbfb 0%, #3d6ae6 100%);
+    box-shadow: 0px 1px 10px rgba($color: #000000, $alpha: 1.0) (98, 140, 255, 0.5);
+    transform: rotate(-15deg);
+    border-radius: 10px 10px 10px 50px;
+    margin-left: 1px;
+    margin-top: -200px;
+    margin-bottom:60px
+}
+
+
+
 
