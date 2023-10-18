@@ -7,5 +7,16 @@ import { PetsPage } from './dashboardpages/pets/pets.page';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  showWhatWeDoSubMenu: boolean = false;
+  showWhatYouCanDoSubMenu: boolean = false;
   constructor() {}
+
+
+  toggleSubMenu(subMenu: string) {
+    if (subMenu === 'whatWeDo') {
+      this.showWhatWeDoSubMenu = !this.showWhatWeDoSubMenu;
+    } else if (subMenu === 'whatYouCanDo') {
+      this.showWhatYouCanDoSubMenu = !this.showWhatYouCanDoSubMenu;
+    }
+  }
 }

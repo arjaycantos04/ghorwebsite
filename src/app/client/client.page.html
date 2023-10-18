@@ -1,19 +1,210 @@
+
+
 <ion-header [translucent]="true">
   <ion-toolbar>
-
     <div style="display: flex; align-items: center; justify-content: space-between;">
       <div style="display: flex; align-items: center;">
         <img src="../../assets/icon/logo.jpg" style="height: 50px; margin-right: 8px; margin-bottom: 8px;">
         <ion-title size="small">SagiPet: Don't Shop Just Adopt</ion-title>
       </div>
     </div>
-    
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" style="display: flex; justify-content: center; align-items: center;">
-  <div style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;">
-    <img src="../../assets/icon/ud1.gif" style="max-width: 80%; max-height: 80%;">
+  <div class="container">
+    <ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+              <ion-content>
+                <ion-toolbar>
+                  <ion-title>Your Pet Details</ion-title>
+                </ion-toolbar>
+                <ion-list lines="none">
+                  <ion-item>
+                    <ion-grid [fixed]="true">
+                      <ion-row>
+                        <ion-col>
+                          <ng-container *ngFor="let pet of results">
+                          <ion-img [src]="pet.image"></ion-img>
+                          <h2>{{ pet.name }}</h2> 
+                          <p> Age: {{ pet.age }}</p>
+                          <p> Breed: {{ pet.breed }}</p>
+                          <p>Category: {{ pet.category }}</p>  
+                        </ng-container>    
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-item>
+                </ion-list>
+              </ion-content>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+    <ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-toolbar>
+          <ion-col>
+            <ion-segment [(ngModel)]="selectedSegment" value="application">
+              <ion-segment-button value="application">
+                <ion-label>Application</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="survey">
+                <ion-label>Survey</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="confirmation">
+                <ion-label>Confirmation</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-col>
+        </ion-toolbar>
+        </ion-row><br><br><br><br>
+        
+        <!-- Application Form -->
+        <div *ngIf="selectedSegment === 'application'">
+          <!-- Application form content goes here -->
+
+ <ion-row>
+            <ion-col class ="custom-input">
+              <ion-input label="First Name" label-placement="floating" fill="outline"></ion-input>
+            </ion-col>
+            <ion-col>
+              <ion-input label="Last Name" label-placement="floating" fill="outline"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input
+              type="email"
+              fill="outline"
+              errorText="Invalid email"
+              label="Email"
+              labelPlacement="floating"
+              ngModel
+              email
+            ></ion-input>
+            </ion-col>
+            <ion-col>
+              <ion-input fill="outline" label="Phone Number:" type="tel" placeholder="+00-000-000-0000"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input label="Current Address" label-placement="floating" fill="outline"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input label="Social Media" label-placement="floating" fill="outline"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <p> Valid Id :</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <p>Environment Picture :</p>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <!-- Survey Form -->
+        <div class=" survey " *ngIf="selectedSegment === 'survey'">
+          <!-- Survey form content goes here -->
+          <ion-row>
+            <ion-col>
+              <p>Have you ever had a pet?
+              <ion-radio-group value="custom-checked">
+                <ion-col>
+                <ion-radio value="custom" aria-label="Custom checkbox">Yes</ion-radio>
+                <ion-radio value="custom-checked" aria-label="Custom checkbox that is checked"> No</ion-radio>
+              </ion-col>
+              </ion-radio-group>
+            </p>
+            </ion-col>
+            <ion-col class="number">
+              <ion-item>
+                <ion-input label="Number of pets had" dill="clear" type="number" placeholder="000"></ion-input>
+              </ion-item>
+            </ion-col>
+            <!-- Add more survey form fields as needed -->
+          </ion-row>
+          <ion-row>
+            <ion-col>
+            <ion-card class="textbox-card">
+              <ion-card-header>
+                <ion-card-subtitle>If Yes, state here the name and history of your </ion-card-subtitle>
+                <ion-card-content>
+                  <ion-textarea placeholder="Enter your text here"></ion-textarea>
+                </ion-card-content>
+              </ion-card-header>
+            </ion-card>
+            </ion-col>
+          </ion-row><br>
+          <ion-row>
+            <ion-col>
+              <ion-input label="Source of Income" label-placement="floating" fill="outline"></ion-input>
+            </ion-col>
+            <ion-col>
+              <ion-input label="If a Student, who will support the expenses?" label-placement="floating" fill="outline"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <p>Are you willing to update after the adoption?
+              <ion-radio-group value="custom-checked">
+                <ion-col>
+                <ion-radio value="custom" aria-label="Custom checkbox">Yes</ion-radio>
+                <ion-radio value="custom-checked" aria-label="Custom checkbox that is checked"> No</ion-radio>
+              </ion-col>
+              </ion-radio-group>
+            </p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <p>Are you willing to spay-neuter the pet you will adopt?
+              <ion-radio-group value="custom-checked">
+                <ion-col>
+                <ion-radio value="custom" aria-label="Custom checkbox">Yes</ion-radio>
+                <ion-radio value="custom-checked" aria-label="Custom checkbox that is checked"> No</ion-radio>
+              </ion-col>
+              </ion-radio-group>
+            </p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <p>Are you sure you are capable of taking good care of this pet?
+              <ion-radio-group value="custom-checked">
+                <ion-col>
+                <ion-radio value="custom" aria-label="Custom checkbox">Yes</ion-radio>
+                <ion-radio value="custom-checked" aria-label="Custom checkbox that is checked"> No</ion-radio>
+              </ion-col>
+              </ion-radio-group>
+            </p>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <!-- Confirmation Form -->
+        <div *ngIf="selectedSegment === 'confirmation'">
+          <!-- Confirmation form content goes here -->
+          <ion-row>
+            <ion-col>
+              <ng-container *ngFor="let pet of results">
+             <h1> Are you 100% sure you want adopt {{pet.name}}</h1>
+             <p>If yes kindly continue</p>
+            </ng-container>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-grid>
+    </ion-list>
   </div>
 </ion-content>
-

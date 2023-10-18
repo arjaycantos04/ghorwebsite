@@ -1,23 +1,48 @@
 import { Injectable } from '@angular/core';
-import { GoogleAuthProvider } from '@angular/fire/auth';
-import { AngularFireAuth} from '@angular/fire/compat/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { GoogleAuthProvider, User } from 'firebase/auth'; // Import the User type
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  private user: User | null;
 
-  constructor(private afs: AngularFireAuth) { }
-
-  signInWithGoogle() {
-    return this.afs.signInWithPopup(new GoogleAuthProvider());
+  constructor(private afs: AngularFireAuth) {
+    this.user = null;
   }
 
-  signWithEmailAndPassword(user : {email: string, password: string}) {
-    return this.afs.signInWithEmailAndPassword(user.email, user.password);
+  async signInWithGoogle() {
+    try {
+      const provider = new GoogleAuthProvider();
+      await this.afs.signInWithPopup(provider);
+    } catch (error) {
+      throw error;
+    }
   }
 
-  signupWithEmailAndPassword(user : {email: string, password: string}) {
-    return this.afs.createUserWithEmailAndPassword(user.email, user.password);
+  async checkUserExists(email: string): Promise<boolean> {
+    try {
+      const users = await this.afs.fetchSignInMethodsForEmail(email);
+      return users.length > 0;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async signInWithEmailAndPassword(email: string, password: string) {
+    try {
+      await this.afs.signInWithEmailAndPassword(email, password);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async signUpWithEmailAndPassword(email: string, password: string) {
+    try {
+      await this.afs.createUserWithEmailAndPassword(email, password);
+    } catch (error) {
+      throw error;
+    }
   }
 }

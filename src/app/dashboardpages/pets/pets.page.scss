@@ -1,162 +1,354 @@
-@media only screen and (min-width: 992px) {
-    .container {
-      width: 45%;
-      margin:auto;
-     }
-  }
-  *{
-    font-family: monopoly;
+/* home.page.scss */
+
+/* Style for the logo image */
+.logo-img {
+  height: 50px;
+  width: 50px;
+  margin-right: 8px;
+ 
+  margin-left: 5px;
 }
 
-  img{
-    margin-top: 10px;
-  }
-
-  ion-toolbar{
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-bottom: none;
-    display: flex;
-    justify-content: space-between;
-    --background: transparent;
-  }
-
-
-  ion-content{
-    align-items: center;
-    --background: linear-gradient(to bottom, #9188f2, #6a8ce8);
-  }
-
-  .background-design{
-    height: 470px;
-    width: 1550px;
-    background: blue;
-    background: linear-gradient(90deg, #fbfbfb 0%, #3d6ae6 100%);
-    box-shadow: 0px 1px 10px rgba($color: #000000, $alpha: 1.0) (98, 140, 255, 0.5);
-    transform: rotate(-15deg);
-    border-radius: 10px 10px 10px 50px;
-    margin-left: 1px;
-    margin-top: -250px;
-    margin-bottom:60px
-}
-
-  ion-select{
-    width: 60px;
-  }
-
-  ion-select-option{
-    width: 60px;
-    
-  }
-  
-  ion-item {
-    --padding-start: 0;
-  }
-
-  ion-card{
-    box-shadow: 0px, 3px, 45px, 0px rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
-    text-align: center;
-
-  }
-
-  ion-card-content{
-  background-color: transparent;
-  margin: 10px;
-  margin-top: -200px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  }
-
-  .content h1{
-    color: #8975fb;
-    font-size: 50px;
-    font-weight: 900;
-    line-height: 50px;
-    text-transform: inherit;
-    width: 100%;
-}
-.content h1 span{
-    color: #fd4766;
-}
-
-
-  ion-button{
-    height: 20px;
-    width: 100px;
-  }
-
-  .fixed-card {
-    width: 150px;
-    height: 450px;
-    margin-top: 0;
-    margin-left: 0;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .fixed-image {
-    width: 60%;
-    height: 120px; /* Adjust the height as per your preference */
-    object-fit: cover;
-    flex: 0 0 auto;
-    object-fit: cover;
-  }
+/* Style for the "What We Are" link */
+.whtware {
   
   
-// modal section
-
-.ion-padding{
-  --background: white;
-  font-family: lato;
+  text-decoration: none;
+  
+  color: rgba(0, 0, 0, 0.523);
 }
 
-
-ion-modal {
-  --height: 50%;
-  --border-radius: 16px;
-  --box-shadow: 0 20px 25px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-}
-
-ion-modal::part(backdrop) {
-  background: rgba(209, 213, 219);
-  opacity: 1;
-}
-
-ion-modal ion-toolbar {
-  --background: rgb(95, 86, 255);
-  --color: white;
-}
-
-ion-content{
-  margin-top: 770px;
-  --background: white;
-}
-
-ion-list{
-  margin-top: 50px;
-  --background: white;
-
-  ion-img{
-    height:300px;
-    width:350px;
-
-  }
-}
-
-.container {
+/* Style for the ion-select elements */
+.custom-select {
   width: 150px;
-  height: 250px;
-  margin-top: 0;
-  display: flex;
-  flex-direction: column;
-  background: #8975fb;
+}
 
-  ion-button{
-    margin-left: 25px;
+.notif {
+  height:30px;
+  width: 50px;
+}
+.person {
+  height:30px;
+  width: 50px;
+}
+
+.bt {
+ margin-top: 5px;
+}
+
+.cover-title h4{
+  color: #1f1f25;
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  display: inline-block;
+  margin-bottom: 1px;
+  background: linear-gradient(250deg, #ffffff 20.69%, #290689 50.19%,#fd4766 79.69%);
+  
+  -webkit-text-fill-color: transparent;
+
+}
+
+.cover-title .h1{
+  color: #8975fb;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 70px;
+  text-transform: inherit;
+  width: 100%;
+
+}
+
+.cover-title h1 span{
+  color: #001693;
+}
+.cover-title p{
+  color: #ffffff;
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+.container .img{
+align-items: end;
+border-radius: 10px;
+}
+
+.cover-title {
+text-align: center;
+color: #fff;
+z-index: 1;
+}
+
+.cover-title h1 {
+font-size: 3rem;
+margin-bottom: 1rem;
+font-family: 'Poppins', serif;
+font-size: 70px;
+font-weight: 700;
+line-height: 70px;
+// color: rgba(248, 88, 48, 0.694);
+}
+
+.cover-title h2 {
+font-size: 2rem;
+margin-bottom: 1.5rem;
+font-family: 'Poppins', serif;
+}
+
+.cover-title p {
+font-size: 1.2rem;
+margin-bottom: 2rem;
+font-family: 'Poppins', serif;
+}
+
+
+
+.image-container {
+position: relative;
+height: 100vh;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.image-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 120%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.3); /* Adjust the opacity as needed */
+z-index: 1;
+}
+
+.full-height-image {
+position: absolute;
+top: 0;
+left: 0;
+width: 130%;
+height: 100%;
+object-fit: cover;
+}
+.content{
+  position: relative;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1;
+
+}
+
+/* Style for the Donate Now button */
+.donate-button {
+ margin-top: 10px;
+}
+.loginbt {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+/* Style for the Login button */
+.login-button {
+  background-color: #28a745; /* Change to your desired color */
+  color: #fff;
+  font-weight: bold;
+ /* Reduce the margin */
+}
+
+
+.ion-align-items-start{
+  margin-top: 17px;
+}
+
+.vid 
+{
+  background-color:#290689;
+}
+
+
+#img1 {
+  position: absolute;
+  top: -100px;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
+  left: -30px;
+  // border: 1px solid red;
+}
+#img2 {
+  position: absolute;
+  // border: 1px solid green;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  top: 100px;
+  left: 50px;
+  z-index: 0;
+}
+#ltby {
+  font-size: 40px;
+  color: #5D5A88;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #FAFAFF;
+  z-index: 4;
+  width: 100%;
+}
+
+  //LOCATION
+  ion-col.mapLarge{
+    display: none;
+    padding-left: 190px;
+    padding-right: 190px;
+
   }
+  ion-col.mapSmall {
+    display: block;
+    position: relative;
+    iframe {
+      position: absolute;
+      left: -50px;
+      // left: 50px;
+      bottom: -120px;
+    }
+  }
+
+
+@media(min-width: 768px) {
+  
+  ion-col.largeEvent {
+    display: block;
+    img {
+      width: 500px;
+      height: 300px;
+    }
+  }
+  ion-col.smallEvent {
+    display: none
+  }
+
+    //LOCATION
+    ion-col.mapLarge{
+      display: block;
+    }
+    ion-col.mapSmall {
+      display: none;
+    }
+}
+
+.imageslide {
+  width: 100px;
+  height: 100px;
+}
+
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.mission {
+  height: 350px;
+  
+}
+.youvid {
+  margin-left: 330px;
+  margin-left: 330px;
+  
+}
+.missiont {
+  font-weight: bold;
+  font-size: 35px;
+  align-items: center;
+  margin-top: 65px;
+  
+}
+.our {
+  font-weight: bold;
+  font-size: 35px;
+  margin-top: 50px;
+}
+
+
+
+.video {
+  background-color: blue;
+  height: 550px;
+}
+.miss {
+  margin-right: 150px;
+  margin-left: 150px;
+}
+
+.youtube {
+  width: 650px;
+  height: 350px;
+  margin-left: 60px;
+  
+ 
+  
+  
+}
+
+
+
+.location {
+  font-weight: bold;
+  font-size: 35px;
+  align-items: center;
+  margin-top: 50px;
+  
+  text-align: center;
+}
+
+.locationt {
+  margin-right: 400px;
+  margin-left: 400px;
+}
+
+.yvid {
+margin-right: 400px;
+margin-left: 400px;
+}
+.locationde {
+  margin-left: 20px;
+  margin-left: 20px;
+}
+
+
+.fixed-image {
+  height: 300px;
+  width: 300px
+}
+
+.notif{
+  color: black;
+  
+}
+  
+.notification-button {
+  position: relative; /* Set the position of the button to relative */
+ 
+}
+
+.notification-badge {
+  position: absolute; /* Set the position of the badge to absolute */
+  top: 1; /* Position it at the top */
+  right: 1; /* Position it at the right */
+  transform: translate(50%, -50%); /* Center the badge */
+  font-size: 0.8em; /* Adjust the font size as needed */
+  min-width: 1.5em; /* Ensure a minimum width for the badge */
+  padding: 0.2em 0.5em; /* Adjust padding as needed */
+  background-color: red; /* Example background color for the badge */
+  border-radius: 50%; /* Make the badge circular */
 }

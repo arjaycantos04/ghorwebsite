@@ -1,30 +1,54 @@
-<ion-header [translucent]="true">
-  <ion-header collapse="fade">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button menu="main-menu"></ion-menu-button>
-      </ion-buttons>
-      <div style="display: flex; align-items: center; justify-content: space-between;">
-        <div style="display: flex; align-items: center;">
-          <img src="../../assets/icon/logo.jpg" style="height: 50px; margin-right: 8px; margin-bottom: 8px;">
-          <ion-title size="small">SagiPet</ion-title>
-        </div>
-      </div>
-      <ion-buttons slot="end">
-        <ion-select aria-label="filter" interface="popover" placeholder="Filter">
-          <ion-select-option value="cats">Cats</ion-select-option>
-          <ion-select-option value="dogs">Dogs</ion-select-option>
-          <ion-select-option value="aged">Aged</ion-select-option>
+
+
+ 
+  <ion-toolbar>
+    <ion-buttons slot="start" *ngIf="!isBigScreen">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-row>
+      <ion-col size="2">
+        <img src="../../assets/icon/logo.png" class="logo-img">
+      </ion-col>
+      <ion-col class="ion-align-items-start">
+        <a class="whtware"  *ngIf="!isSmallScreen">What We Are</a>
+      </ion-col>
+      <ion-col *ngIf="!isSmallScreen">
+        <ion-select aria-label="pet" interface="popover" placeholder="What We Do" class="custom-select">
+          <ion-select-option value="dog">Rebuild</ion-select-option>
+          <ion-select-option value="cat">Rehabilitate</ion-select-option>
+          <ion-select-option value="donate">Rehome</ion-select-option>
         </ion-select>
+      </ion-col>
+      <ion-col size="3" *ngIf="!isSmallScreen">
+        <ion-select aria-label="pet" interface="popover" placeholder="What You Can Do" class="custom-select">
+          <ion-select-option value="pet">Adopt a Pet</ion-select-option>
+          <ion-select-option value="donate">Donate</ion-select-option>
+        </ion-select>
+      </ion-col>
 
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
-</ion-header>
+      <ion-list class="bt">
+        <ion-buttons slot="end" class="notification-ellipsis">
+          <ion-button fill="clear"  class="notification-button">
+            <ion-icon name="notifications-outline" class="notif"></ion-icon>
+            <ion-badge color="danger" class="notification-badge"></ion-badge>
+          </ion-button>
+          <ion-button fill="clear" >
+            <ion-icon name="ellipsis-vertical-outline" class="person"></ion-icon>
+            </ion-button>
+            </ion-buttons>
+            </ion-list>
+      
+       
+       
+      
+     
+      
+    </ion-row>
+  </ion-toolbar>
 
 
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" color="light">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large" slot="end">pets</ion-title>
@@ -37,291 +61,87 @@
     </div>
   </section>
 
+
+
+
   <ion-card-content>
     <ion-card-header>
       <div class="content">
         <h1>Find a <span>new </span>Pet for you!!</h1>
         <ion-card-subtitle>See here your desired pets</ion-card-subtitle>
       </div>
-    </ion-card-header>
-
-
-
-
-
-    
-        
-    <ion-grid>
-      <ion-row> 
-        <ion-col> 
-          <ion-card class="container"> 
-        <ion-card button id="open-modal" expand="block" class="fixed-card">
-          <img src="../../assets/icon/d3.png" class="fixed-image"/>
-          <ion-card-header>
-            <ion-card-title>Connor</ion-card-title>
-            <ion-card-subtitle>
-              Gender: Male
-              Age: 3yrs old
-            </ion-card-subtitle>
-          </ion-card-header>
-          <ion-button routerLink="/client" shape="round" fill="outline" color="dark">Adopt</ion-button>
-        </ion-card>
-
-        <ion-modal #modal trigger="open-modal">
-          <ng-template>
-            <ion-content>
-              <ion-toolbar>
-                <ion-title>Your Pet Details</ion-title>
-                <ion-buttons slot="end">
-                  <ion-button color="light" (click)="modal.dismiss()"></ion-button>
-                </ion-buttons>
-              </ion-toolbar>
-              <ion-list lines="none">
-                <ion-item>
-                    <ion-img src="../../assets/icon/d3.png"></ion-img>
-                    <ion-grid [fixed]="true">
-                      <ion-row>
-                        <ion-col><h2>Connor</h2></ion-col>
-                        <ion-col>Connor has been abandoned by his former pet owner as he became agressive and was surrendered in the shelter,
-                          help connor find his new family and friend to bring joy into.</ion-col>
-                      </ion-row>
-                    </ion-grid> 
-                </ion-item>
-              </ion-list>
-            </ion-content>
-          </ng-template>
-        </ion-modal>
-        <ion-button routerLink="/client" shape="round" fill="clear" color="dark">Adopt</ion-button>
-      </ion-card>
-       </ion-col> 
-
-       <ion-col> 
-        <ion-card class="container">
-        <ion-card button id="1-modal" expand="block" class="fixed-card">
-          <ion-icon size="small"></ion-icon>
-          <img src="../../assets/icon/d1.png" class="fixed-image" />
-          <ion-card-header>
-            <ion-card-title>Maxi</ion-card-title>
-            <ion-card-subtitle>
-              Gender: Female
-              Age: 3yrs old
-            </ion-card-subtitle>
-          </ion-card-header>
-          <ion-button routerLink="/client" shape="round" fill="outline" color="dark">Adopt</ion-button>
-        </ion-card>
-        <ion-modal #modal trigger="1-modal">
-          <ng-template>
-            <ion-content>
-              <ion-toolbar>
-                <ion-title>Your Pet Details</ion-title>
-                <ion-buttons slot="end">
-                  <ion-button color="light" (click)="modal.dismiss()"></ion-button>
-                </ion-buttons>
-              </ion-toolbar>
-              <ion-list lines="none">
-                <ion-item>
-                    <ion-img src="../../assets/icon/d1.png"></ion-img>
-                    <ion-grid [fixed]="true">
-                      <ion-row>
-                        <ion-col><h2>Maya</h2></ion-col>
-                        <ion-col>Connor has been abandoned by his former pet owner as he became agressive and was surrendered in the shelter,
-                          help connor find his new family and friend to bring joy into.</ion-col>
-                      </ion-row>
-                    </ion-grid> 
-                </ion-item>
-              </ion-list>
-            </ion-content>
-          </ng-template>
-        </ion-modal>
-        <ion-button routerLink="/client" shape="round" fill="clear" color="dark">Adopt</ion-button>
-      </ion-card>
-      </ion-col>
-        
-
-      <ion-col> 
-        <ion-card class="container">
-        <ion-card button id="2-modal" expand="block" class="fixed-card">
-          <ion-icon size="small"></ion-icon>
-          <img src="../../assets/icon/d2.png" class="fixed-image" />
-          <ion-card-header>
-            <ion-card-title>Norman</ion-card-title>
-            <ion-card-subtitle>
-              Gender: Female
-              Age: 3yrs old
-            </ion-card-subtitle>
-          </ion-card-header>
-          <ion-button routerLink="/client" shape="round" fill="outline" color="dark">Adopt</ion-button>
-        </ion-card>
-        <ion-modal #modal trigger="2-modal">
-          <ng-template>
-            <ion-content>
-              <ion-toolbar>
-                <ion-title>Your Pet Details</ion-title>
-                <ion-buttons slot="end">
-                  <ion-button color="light" (click)="modal.dismiss()"></ion-button>
-                </ion-buttons>
-              </ion-toolbar>
-              <ion-list lines="none">
-                <ion-item>
-                    <ion-img src="../../assets/icon/d2.png"></ion-img>
-                    <ion-grid [fixed]="true">
-                      <ion-row>
-                        <ion-col><h2>Norman</h2></ion-col>
-                        <ion-col>Connor has been abandoned by his former pet owner as he became agressive and was surrendered in the shelter,
-                          help connor find his new family and friend to bring joy into.</ion-col>
-                      </ion-row>
-                    </ion-grid> 
-                </ion-item>
-              </ion-list>
-            </ion-content>
-          </ng-template>
-        </ion-modal>
-        <ion-button routerLink="/client" shape="round" fill="clear" color="dark">Adopt</ion-button>
-      </ion-card>
-      </ion-col>
-
-
-      </ion-row>
-    </ion-grid>    
-
-
-    <ion-grid>
-      <ion-row>  
-
-        <ion-col> 
-          <ion-card class="container">
-          <ion-card button id="3-modal" expand="block" class="fixed-card">
-            <ion-icon size="small"></ion-icon>
-            <img src="../../assets/icon/c1.png" class="fixed-image" />
-            <ion-card-header>
-              <ion-card-title>Layla</ion-card-title>
-              <ion-card-subtitle>
-                Gender: Female
-                Age: 3yrs old
-              </ion-card-subtitle>
-            </ion-card-header>
-            <ion-button routerLink="/client" shape="round" fill="outline" color="dark">Adopt</ion-button>
-          </ion-card>
-          <ion-modal #modal trigger="3-modal">
-            <ng-template>
-              <ion-content>
-                <ion-toolbar>
-                  <ion-title>Your Pet Details</ion-title>
-                  <ion-buttons slot="end">
-                    <ion-button color="light" (click)="modal.dismiss()"></ion-button>
-                  </ion-buttons>
-                </ion-toolbar>
-                <ion-list lines="none">
-                  <ion-item>
-                      <ion-img src="../../assets/icon/c1.png"></ion-img>
-                      <ion-grid [fixed]="true">
-                        <ion-row>
-                          <ion-col><h2>Layla</h2></ion-col>
-                          <ion-col>Connor has been abandoned by his former pet owner as he became agressive and was surrendered in the shelter,
-                            help connor find his new family and friend to bring joy into.</ion-col>
-                        </ion-row>
-                      </ion-grid> 
-                  </ion-item>
-                </ion-list>
-              </ion-content>
-            </ng-template>
-          </ion-modal>
-          <ion-button routerLink="/client" shape="round" fill="clear" color="dark">Adopt</ion-button>
-        </ion-card>
-        </ion-col> 
 
       
-        <ion-col> 
-          <ion-card class="container">
-          <ion-card button id="4-modal" expand="block" class="fixed-card">
-            <ion-icon size="small"></ion-icon>
-            <img src="../../assets/icon/c2.png" class="fixed-image" />
-            <ion-card-header>
-              <ion-card-title>Ar-jay</ion-card-title>
-              <ion-card-subtitle>
-                Gender: Female
-                Age: 3yrs old
-              </ion-card-subtitle>
-            </ion-card-header>
-            <ion-button routerLink="/client" shape="round" fill="outline" color="dark">Adopt</ion-button>
-          </ion-card>
-          <ion-modal #modal trigger="4-modal">
-            <ng-template>
-              <ion-content>
-                <ion-toolbar>
-                  <ion-title>Your Pet Details</ion-title>
-                  <ion-buttons slot="end">
-                    <ion-button color="light" (click)="modal.dismiss()"></ion-button>
-                  </ion-buttons>
-                </ion-toolbar>
-                <ion-list lines="none">
-                  <ion-item>
-                      <ion-img src="../../assets/icon/c2.png"></ion-img>
-                      <ion-grid [fixed]="true">
-                        <ion-row>
-                          <ion-col><h2>Ar-jay</h2></ion-col>
-                          <ion-col>Connor has been abandoned by his former pet owner as he became agressive and was surrendered in the shelter,
-                            help connor find his new family and friend to bring joy into.</ion-col>
-                        </ion-row>
-                      </ion-grid> 
-                  </ion-item>
-                </ion-list>
-              </ion-content>
-            </ng-template>
-          </ion-modal>
-          <ion-button routerLink="/client" shape="round" fill="clear" color="dark">Adopt</ion-button>
-          </ion-card>
-        </ion-col>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-searchbar  [debounce]="1000" (ionInput)="handleInput($event)" class="searchbar"></ion-searchbar>
+            </ion-col>
+            
+          </ion-row>
+        </ion-grid>
+      
+
+      
+    </ion-card-header>
         
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" size-md="3" *ngFor="let pet of results">
 
-        <ion-col> 
-
-        <ion-card class="container">
-          <ion-card button id="5-modal" expand="block" class="fixed-card">
-            <ion-icon size="small"></ion-icon>
-            <img src="../../assets/icon/c3.png" class="fixed-image" />
-            <ion-card-header>
-              <ion-card-title>Rowan</ion-card-title>
-              <ion-card-subtitle>
-                Gender: Female
-                Age: 3yrs old
-              </ion-card-subtitle>
-            </ion-card-header>
-          </ion-card>
-          <ion-modal #modal trigger="5-modal">
-            <ng-template>
-              <ion-content>
-                <ion-toolbar>
-                  <ion-title>Your Pet Details</ion-title>
-                  <ion-buttons slot="end">
-                    <ion-button color="light" (click)="modal.dismiss()"></ion-button>
-                  </ion-buttons>
-                </ion-toolbar>
-                <ion-list lines="none">
-                  <ion-item>
-                      <ion-img src="../../assets/icon/c3.png"></ion-img>
+            <ion-card button id="open-modal-{{pet.id}}" class="fixed-card">
+              <img [src]="pet.image" class="fixed-image"/>
+              <ion-card-header>
+                <ion-card-title>{{ pet.name }}</ion-card-title>
+                <ion-card-subtitle>
+                   {{ pet.gender }}
+                </ion-card-subtitle>
+                <ion-card-subtitle> {{ pet.age }}</ion-card-subtitle>
+              </ion-card-header>
+            </ion-card>
+    
+            <!-- <ion-modal #modal trigger="open-modal-{{pet.id}}">
+              <ng-template>
+                <ion-content>
+                  <ion-toolbar>
+                    <ion-title>Your Pet Details</ion-title>
+                    <ion-buttons slot="end">
+                      <ion-button color="light" (click)="modal.dismiss()"></ion-button>
+                    </ion-buttons>
+                  </ion-toolbar>
+                  <ion-list lines="none">
+                    <ion-item>
+                      <ion-img [src]="pet.image"></ion-img>
                       <ion-grid [fixed]="true">
                         <ion-row>
-                          <ion-col><h2>Rowan</h2></ion-col>
-                          <ion-col>Rowan has been abandoned by his former pet owner as he became agressive and was surrendered in the shelter,
-                            help connor find his new family and friend to bring joy into.</ion-col>
+                          <ion-col size="small">
+                            <h2>{{ pet.name }}</h2> 
+                            <p> Age: {{ pet.age }}</p>
+                            <p> Breed: {{ pet.breed }}</p>
+                            <p>Category: {{ pet.category }}</p>      
+                          </ion-col>
+                            <ion-col>
+                            <p>Description:
+                            {{ pet.description }}
+                          </p>
+
+                          <ion-button (click)="adoptClicked(pet)" routerLink="/client" shape="round" fill="solid" color="light">Adopt</ion-button>
+
+                          </ion-col>
                         </ion-row>
-                      </ion-grid> 
-                  </ion-item>
-                </ion-list>
-              </ion-content>
-            </ng-template>
-          </ion-modal>
-           <ion-button routerLink="/client" shape="round" fill="clear" color="dark">Adopt</ion-button>
-        </ion-card>
+                      </ion-grid>
+                    </ion-item>
+                  </ion-list>
+                </ion-content>
+              </ng-template>
+            </ion-modal> -->
         </ion-col>
-
-
       </ion-row>
-    </ion-grid>    
+    </ion-grid>
+    
+    
 
 
   </ion-card-content>
    
 </ion-content>
-

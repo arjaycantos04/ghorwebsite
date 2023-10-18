@@ -8,12 +8,15 @@ import { PetsPageRoutingModule } from './pets-routing.module';
 
 import { PetsPage } from './pets.page';
 
+// import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     PetsPageRoutingModule
+    // Ng2SearchPipeModule
   ],
   declarations: [PetsPage]
 })

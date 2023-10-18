@@ -1,0 +1,191 @@
+
+  <ion-toolbar>
+    <ion-buttons slot="start" *ngIf="!isBigScreen">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-row>
+      <ion-col size="2">
+        <img src="../../assets/icon/logo.png" class="logo-img">
+      </ion-col>
+      <ion-col class="ion-align-items-start">
+        <a class="whtware"  *ngIf="!isSmallScreen">What We Are</a>
+      </ion-col>
+      <ion-col *ngIf="!isSmallScreen">
+        <ion-select aria-label="pet" interface="popover" placeholder="What We Do" class="custom-select">
+          <ion-select-option value="dog">Rebuild</ion-select-option>
+          <ion-select-option value="cat">Rehabilitate</ion-select-option>
+          <ion-select-option value="donate">Rehome</ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-col size="3" *ngIf="!isSmallScreen">
+        <ion-select aria-label="pet" interface="popover" placeholder="What You Can Do" class="custom-select">
+          <ion-select-option value="pet">Adopt a Pet</ion-select-option>
+          <ion-select-option value="donate">Donate</ion-select-option>
+        </ion-select>
+      </ion-col>
+      
+        <ion-button aria-label="news" class="donate-button">
+          Donate Now
+        </ion-button>
+        <!-- This button is shown on small screens -->
+        <ion-button (click)="openLoginModal()" class="loginbt" color="success">
+          Login
+        </ion-button>
+      
+     
+      
+    </ion-row>
+  </ion-toolbar>
+ <ion-content>
+  
+  <div class="image-container">
+    <!-- <div class="bordered-div"></div> -->
+    <div class="image-overlay"></div>
+    <img src="../../assets/icon/bc1.jpg" alt="cover" class="full-height-image">
+    <div class="cover-title">
+      <h4>Don't Shop, Just Adopt Find your petfriend</h4>
+      <h1>Gods Home of <span> Refuge</span></h1>
+      <p>Rescue a life, adopt a pet because the joy of companionship knows no bounds</p>
+      <ion-button color="secondary" shape="round" routerLink="/pets">
+        Adopt Now
+      </ion-button>
+    </div>
+  </div>
+
+  
+  <ion-grid>
+    <ion-row class="mission" >
+          <ion-col size="12" class="ion-text-center">
+            <ion-title class="missiont" color="primary">Our Mission</ion-title>
+            <p class="miss">
+              "At our pet shelter, our mission is simple yet profound – to provide love, care, and refuge to animals in need. We are dedicated to creating a safe haven for abandoned, abused, and neglected pets, offering them a second chance at a joyful and fulfilling life. Through compassion, advocacy, and responsible adoption practices, we strive to unite animals with loving families, fostering bonds that bring immeasurable joy and companionship.
+            </p>
+          </ion-col>
+        </ion-row>
+
+
+
+        <ion-row class="ion-align-items-center ion-justify-content-center" style="background-color:#3880ff; height: 650px;">
+         
+               <ion-col class="yvid">
+                
+                <ion-title class="location" color="light" >Our organization wants to solve the problem of <br> stray animals in Lemery Batangas</ion-title><br><br>
+             
+              <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/A2qq1jBBMno"
+              frameborder="0"
+              allowfullscreen
+             class="youtube"></iframe>
+              </ion-col>
+              
+        </ion-row>
+
+        <!-- <ion-row >
+         
+            <ion-toolbar class="video" color="primary">
+               <ion-col  class="youvid">
+            <ion-title class="our" color="light">Our organization wants to solve the problem of <br> stray animals in Lemery Batangas</ion-title>
+           <br>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/A2qq1jBBMno"
+              frameborder="0"
+              allowfullscreen
+             class="youtube"></iframe></ion-col> 
+         </ion-toolbar> 
+        </ion-row>
+         -->
+
+
+        
+      
+          <!-- <ion-card>
+            <swiper-container class="mySwiper" navigation="true" pagination="true" class="swiper">
+            <swiper-slide >
+              <ion-item class="zoom-effect">
+                    <ion-img src="./assets/icon/logo.png" alt="Pet Image 1" class="imageslide"></ion-img>
+                  </ion-item>
+            </swiper-slide>
+            <swiper-slide >
+              <ion-item class="zoom-effect">
+                <ion-img src="./assets/icon/logo.png" alt="Pet Image 2" class="imageslide"></ion-img>
+              </ion-item>
+            </swiper-slide>
+            <swiper-slide >
+              <ion-item class="zoom-effect">
+                <ion-img src="./assets/icon/logo.png" alt="Pet Image 3" class="imageslide"></ion-img>
+              </ion-item>
+            </swiper-slide>
+            
+            
+          </swiper-container>
+          </ion-card>
+         -->
+    
+
+  <!-- LOCATION -->
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <div id="background"></div>
+           <ion-col class="locationt">
+            
+            <ion-title class="location" color="primary">We are located here!</ion-title><br>
+           <span class="locationde"> Our shelter is located in  Diokno Highway, Mahabang Dahilig, Lemery, Philippines.
+          </span><br><br>
+         
+            <!-- <img src="https://taxreform.dof.gov.ph/wp-content/uploads/2019/07/no-thumbnail-medium.png" alt="Location"> -->
+            <iframe class="mapLarge" src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d247917.90684527982!2d120.80324911671583!3d13.85600088397662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e6!4m3!3m2!1d13.74526!2d121.0575916!4m3!3m2!1d13.966429999999999!2d120.88736!5e0!3m2!1sen!2sph!4v1697120495909!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </ion-col>
+          
+    </ion-row>
+
+ <!-- FAQ -->
+    <ion-row>
+      <ion-col>
+        <ion-col size="12">
+          <h1 class="title-h1">Frequently Asked Questions</h1>
+        </ion-col>
+        <ion-col size="12">
+          <ion-accordion-group [multiple]="true" [value]="['']">
+            <ion-accordion value="first">
+              <ion-item slot="header" color="light">
+                <ion-label>How to adopt a pet from your GHOR shelter?</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                To adopt a pet from our shelter, start by signing up the application form 
+                through are website, the admin will validate the application form you submit. 
+                If you got accepted you can contact us and visit our facility during our operating hours. 
+               
+              </div>
+            </ion-accordion>
+            <ion-accordion value="second">
+              <ion-item slot="header" color="light">
+                <ion-label>How to adopt a pet from your GHOR shelter?</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                To adopt a pet from our shelter, start by signing up the application form 
+                through are website, the admin will validate the application form you submit. 
+                If you got accepted you can contact us and visit our facility during our operating hours. 
+               
+              </div>
+            </ion-accordion>
+            <ion-accordion value="third">
+              <ion-item slot="header" color="light">
+                <ion-label>How to adopt a pet from your GHOR shelter?</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                To adopt a pet from our shelter, start by signing up the application form 
+                through are website, the admin will validate the application form you submit. 
+                If you got accepted you can contact us and visit our facility during our operating hours. 
+               
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+        </ion-col>
+      </ion-col>
+    </ion-row>
+</ion-grid>
+
+ </ion-content>

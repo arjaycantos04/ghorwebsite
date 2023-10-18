@@ -1,0 +1,59 @@
+<ion-content class="centered-content">
+  <ion-toolbar>
+    <ion-title class="ion-text-center"><b>Sign Up</b></ion-title>
+    <ion-button (click)="closeModal()" aria-label="close" fill="clear" class="close" slot="end">
+      <ion-icon class="icons" name="close" aria-hidden="true"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+
+  <ion-card class="content">
+    <ion-col size="12">
+      <form [formGroup]="signupForm" (ngSubmit)="signup()">
+        <!-- First Name -->
+        <ion-item>
+          <ion-label position="floating">First Name</ion-label>
+          <ion-input formControlName="firstName" type="text"></ion-input>
+        </ion-item>
+        <!-- Last Name -->
+        <ion-item>
+          <ion-label position="floating">Last Name</ion-label>
+          <ion-input formControlName="lastName" type="text"></ion-input>
+        </ion-item>
+        <!-- Email -->
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="email" type="email"></ion-input>
+        </ion-item>
+        <!-- Password -->
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+        <!-- Confirm Password -->
+        <ion-item>
+          <ion-label position="floating">Confirm Password</ion-label>
+          <ion-input formControlName="confirmPassword" type="password"></ion-input>
+        </ion-item>
+
+        <!-- Display error messages for email field -->
+        <div *ngIf="signupForm.get('email')?.hasError('required') && signupForm.get('email')?.touched">
+          <ion-text color="danger">Email is required</ion-text>
+        </div>
+        <div *ngIf="signupForm.get('email')?.hasError('email') && signupForm.get('email')?.touched">
+          <ion-text color="danger">Please enter a valid email</ion-text>
+        </div>
+
+        <!-- Display password match error message -->
+        <div *ngIf="passwordsDoNotMatch" color="danger">Passwords do not match</div>
+
+        <!-- Sign Up Button -->
+        <ion-button color="success" expand="full" type="submit">Sign Up</ion-button>
+
+        <!-- Already a member link -->
+        <div class="already-member">
+          Already have an account? <a (click)="openLoginPage()">Sign In</a>
+        </div>
+      </form>
+    </ion-col>
+  </ion-card>
+</ion-content>

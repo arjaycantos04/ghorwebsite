@@ -50,8 +50,9 @@
 
   .content{
     position: absolute;
-    top: 20%;
+    top: 25%;
     left: 8%;
+    grid-column: 1 / span 2;
 }
 
   .content .title{
@@ -103,5 +104,41 @@
 }
 
 
+ion-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
+ion-card{
+  width: 150px; /* Set the desired width for the card */
+  height: 250px; /* Set the desired height for the card */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list{
+  margin-top: 33%;
+  width: 250px;
+  height: 400px;
+}
+
+.grid-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.grid-content {
+  margin-top: -20%;
+  width: 50%; /* Adjust the width as needed */
+  padding: 10px;
+}
+
+
+.grid-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

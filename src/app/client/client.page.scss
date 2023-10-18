@@ -37,7 +37,100 @@ ion-toolbar{
   margin-bottom:60px
 }
 
+
+// contents
 ion-content{
-margin-top: 770px;
+margin-top: 10px;
 --background: white;
 }
+
+.container{
+  margin-top: 10%;
+}
+
+ion-list {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: rgba(164, 180, 255, 0.159);
+  margin: 20px;
+  border-radius: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-input{
+  background: transparent;
+  border-radius: 2px;
+
+}
+.or {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.orline {
+  flex-grow: 1;
+  height: 1px;
+  background-color:black ;
+  }
+.ortext{
+  padding: 40px 5px;
+}
+  
+
+// start survey
+ion-radio::part(container) {
+  width: 25px;
+  height: 25px;
+
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+ion-radio::part(mark) {
+  background: none;
+  transition: none;
+  transform: none;
+  border-radius: 0;
+}
+
+ion-radio.radio-checked::part(container) {
+  background: #6815ec;
+  border-color: transparent;
+}
+
+ion-radio.radio-checked::part(mark) {
+  width: 6px;
+  height: 10px;
+
+  border-width: 0px 2px 2px 0px;
+  border-style: solid;
+  border-color: #fff;
+
+  transform: rotate(45deg);
+}
+
+.number{
+  font-size: 20px;
+}
+
+.textbox-card {
+  width: 100%; /* Adjust the width as needed */
+  height: 100%;
+  border-radius: 30px;
+}
+
+textarea {
+  height: 100%; /* Adjust the height as needed */
+  width: 100%; /* Adjust the width as needed */
+  resize: none; /* Prevent resizing of the textarea */
+}
+ ion-textarea {
+  --highlight-color-focused: transparent;
+  --border-color-focused: transparent;
+  --highlight-height: 0;
+}
+//end of survey
+//end of contents
