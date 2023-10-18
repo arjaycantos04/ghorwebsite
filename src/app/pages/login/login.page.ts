@@ -36,6 +36,7 @@ export class LoginPage {
         await this.authService.signInWithEmailAndPassword(this.user.email, this.user.password);
         // Redirect the user after successful login (you can add your logic here)
         this.showToast('Logged in successfully!', 'success');
+        await this.modalController.dismiss();
       } else {
         this.showToast('User not found. Please check your email.', 'danger');
       }
