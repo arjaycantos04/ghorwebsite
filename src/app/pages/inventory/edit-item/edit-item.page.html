@@ -1,0 +1,132 @@
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inventory"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="petdetails"> Pet Details</ion-title>
+  </ion-toolbar>
+<br>
+
+<ion-content [fullscreen]="true" color="light">
+
+  <ion-toolbar color="light">
+    <ion-buttons slot="end" class="deletepet">
+      <ion-button  color="dark" (click)="presentDeleteConfirmation()">
+        <ion-icon name="trash-outline" color="danger"></ion-icon>Delete Pet
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end" class="editpet" (click)="navigateToEditPet()">
+      <ion-button  color="dark" >
+        <ion-icon name="pencil-outline" color="primary"></ion-icon>Edit Pet
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-card>
+    <swiper-container class="mySwiper" navigation="true" pagination="true">
+    <swiper-slide *ngIf="editedPet.image">
+      <ion-item class="zoom-effect">
+            <ion-img [src]="editedPet.image" alt="Pet Image 1" class="imageslide"></ion-img>
+          </ion-item>
+    </swiper-slide>
+    <swiper-slide *ngIf="editedPet.image2">
+      <ion-item class="zoom-effect">
+        <ion-img [src]="editedPet.image2" alt="Pet Image 1" class="imageslide"></ion-img>
+      </ion-item>
+    </swiper-slide>
+    <swiper-slide *ngIf="editedPet.image3">
+      <ion-item class="zoom-effect">
+        <ion-img [src]="editedPet.image3" alt="Pet Image 1" class="imageslide"></ion-img>
+      </ion-item>
+    </swiper-slide>
+    
+    
+  </swiper-container>
+  </ion-card>
+  <ion-grid>
+    
+    <ion-row>
+    
+      
+      <ion-col size="12" size-sm="6" >
+        <ion-card class="datas">
+          <ion-card-content>
+            
+            
+            
+            <ion-col size="12" size-sm="6" offset-sm="3">
+              <!-- Pet Name -->
+              <ion-item>
+                
+                <ion-input [(ngModel)]="editedPet.name" type="text" [readonly]="true" class="name"></ion-input>
+              </ion-item>
+
+              <!-- Other Pet Details -->
+              <ion-item>
+              <ion-row>
+                <ion-col size="3">
+                 
+                    
+                    <ion-input [(ngModel)]="editedPet.category" type="text" [readonly]="true"></ion-input>
+                  </ion-col>
+                
+              
+                <ion-col size="6">
+                  
+                    
+                    <ion-input [(ngModel)]="editedPet.age" type="text" [readonly]="true"></ion-input>
+                 
+                </ion-col>
+              
+                <ion-col size="3">
+                  
+                    
+                    <ion-input [(ngModel)]="editedPet.gender" type="text" [readonly]="true"></ion-input>
+                  </ion-col>
+                  </ion-row>
+                  </ion-item>
+                 
+              
+              
+
+              
+
+              
+
+
+              <ion-item>
+                <ion-label position="floating"><b>Breed</b></ion-label><br>
+                <span>  {{ editedPet.breed }} </span>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating"><b>Description</b></ion-label><br>
+                <span> {{ editedPet.description }}</span>
+              
+              </ion-item>
+            
+              </ion-col>
+              
+            </ion-card-content>
+          </ion-card>
+</ion-col>
+          
+          <!-- New card beside "datas" -->
+    <ion-col size="12" size-sm="6" >
+      <ion-card color="primary" class="consider">
+        <ion-card-content>
+          <h2>Considering {{ editedPet.name }} for adoption?</h2>
+          <ion-button color="success" class="buttons">APPLY NOW</ion-button><br>
+          <ion-button class="buttons" color="light">READ FAQS</ion-button>
+          <div class="divider-line"></div> <!-- Add a divider line -->
+          
+            <ion-icon class="heart" name="heart-outline" slot="icon-only" ></ion-icon> <!-- Add the heart icon -->
+            FAVORITE
+         
+        </ion-card-content>
+      </ion-card>      
+    </ion-col>
+  </ion-row>
+  </ion-grid>
+  </ion-content>
+

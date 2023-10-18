@@ -1,0 +1,79 @@
+ion-toolbar {
+  --ion-font-family: 'arial';
+  height: 75px;
+  display: flex;
+}
+.button-like {
+display: inline-block;
+padding: 10px 20px;
+background-color: #007bff;
+color: #fff;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.hidden-select {
+display: none;
+}
+
+.notif {
+height:30px;
+width: 50px;
+}
+.person {
+height:30px;
+width: 50px;
+}
+
+.welcome {
+  font-size: 25px;
+}
+.here {
+  font-size: 12px;
+  
+}
+
+.card {
+    
+  height:120px;
+  width: 200px;
+  
+}
+
+
+.numberapp{
+  text-align: center;
+  font-size: 40px;
+  
+}
+
+.numberapply{
+  text-align: center;
+}
+
+.person {
+  color: black;
+}
+  
+.notif{
+color: black;
+
+}
+
+.notification-button {
+position: relative; /* Set the position of the button to relative */
+
+}
+
+.notification-badge {
+position: absolute; /* Set the position of the badge to absolute */
+top: 1; /* Position it at the top */
+right: 1; /* Position it at the right */
+transform: translate(50%, -50%); /* Center the badge */
+font-size: 0.8em; /* Adjust the font size as needed */
+min-width: 1.5em; /* Ensure a minimum width for the badge */
+padding: 0.2em 0.5em; /* Adjust padding as needed */
+background-color: red; /* Example background color for the badge */
+border-radius: 50%; /* Make the badge circular */
+}
+

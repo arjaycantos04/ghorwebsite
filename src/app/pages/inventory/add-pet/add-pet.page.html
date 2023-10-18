@@ -1,0 +1,315 @@
+<ion-toolbar class="toolbar">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button></ion-buttons>
+  <ion-grid>
+    <ion-row size="auto">
+  <!-- Add any other elements you want in the toolbar -->
+  <ion-title color="dark" class="welcome"><b>Pets Inventory</b> <br><ion-label class="here"> <span (click)="goToInventory()" style="cursor: pointer;">Inventory</span> / Add Pet</ion-label></ion-title>
+  
+  <ion-list>
+    
+    <ion-icon name="notifications-outline" slot="start" class="notif" ></ion-icon>
+    <ion-icon name="ellipsis-vertical-outline" slot="start" class="person"></ion-icon>
+      <!-- Hidden ion-select element -->
+      <!-- <ion-select #select interface="popover" [(ngModel)]="selectedOption" (ionChange)="onOptionChange()">
+        <ion-icon name="person-circle-outline" slot="start"></ion-icon><ion-select-option value="option1">Option 1</ion-select-option>
+        <ion-select-option value="option2">Option 2</ion-select-option>
+        <ion-select-option value="option3">Option 3</ion-select-option>
+      </ion-select>      
+  </ion-list>
+   -->
+    </ion-list></ion-row></ion-grid>
+  
+</ion-toolbar>
+
+
+
+<ion-content [fullscreen]="true" color="light">
+
+ 
+  <ion-toolbar color="translucent">
+    <div class="step-container-row">
+    <div class="step-container" [class.clickable]="currentStep !== 1" (click)="goToStep(1)">
+      <div class="step-indicator">
+        <span [class.active]="currentStep === 1" [class.completed]="currentStep > 1"> 1 </span>Pet Details
+      </div>
+    </div>
+  
+    <div class="step-container" [class.clickable]="currentStep !== 2" (click)="goToStep(2)">
+      <div class="step-indicator">
+        <span [class.active]="currentStep === 2" [class.completed]="currentStep > 2"> 2 </span>Confirmation
+      </div>
+    </div>
+  </div>
+  </ion-toolbar>
+  
+  
+
+  <div class="form-container">
+    <form #formElement="ngForm" (ngSubmit)="submitForm(formElement)" class="form">
+      <!-- Step 1: Image and Name -->
+      <ng-container *ngIf="currentStep === 1">
+       <!-- Display Selected Images in a Row -->
+<!-- Display Selected Images in a Row -->
+<ion-row>
+  <!-- Pet Image 1 -->
+  <ion-col size="12" sizeMd="4">
+    <ion-item (click)="imageInput1.click()">
+      <ion-icon name="close-circle" class="close-icon" (click)="removeImage(1)" *ngIf="imageURL"></ion-icon>
+      <ion-label position="stacked">Pet Image 1</ion-label>
+      <ion-card class="image-card" [ngClass]="{'blue-filter': imageHovered1}" (mouseenter)="imageHovered1 = true" (mouseleave)="imageHovered1 = false">
+        
+        <ion-img
+          *ngIf="!imageURL"
+          src="./assets/selectimage.png"
+          alt="Add Image"
+          class="pet-image"
+          [ngClass]="{'zoomed': imageHovered1}"
+        ></ion-img>
+        <ion-icon *ngIf="!imageURL" name="add-circle-outline" class="add-icon"></ion-icon>
+        <ion-card *ngIf="imageURL" class="image-card">
+          <ion-img [src]="imageURL" alt="Selected Image 1" class="pet-image"></ion-img>
+
+        </ion-card>
+      </ion-card>
+    </ion-item>
+    <input type="file" #imageInput1 style="display: none;" (change)="handleImageInput($event, 1)" accept="image/*">
+  </ion-col>
+
+  <!-- Pet Image 2 -->
+  <ion-col size="12" sizeMd="4">
+    <ion-item (click)="imageInput2.click()">
+      <ion-icon name="close-circle" class="close-icon" (click)="removeImage(2)" *ngIf="imageURL2"></ion-icon>
+      <ion-label position="stacked">Pet Image 2</ion-label>
+      <ion-card class="image-card" [ngClass]="{'blue-filter': imageHovered2}" (mouseenter)="imageHovered2 = true" (mouseleave)="imageHovered2 = false">
+        <ion-img
+          *ngIf="!imageURL2"
+          src="./assets/selectimage.png"
+          alt="Add Image"
+          class="pet-image"
+          [ngClass]="{'zoomed': imageHovered2}"
+        ></ion-img>
+        <ion-icon *ngIf="!imageURL2" name="add-circle-outline" class="add-icon"></ion-icon>
+        <ion-card *ngIf="imageURL2" class="image-card">
+          <ion-img [src]="imageURL2" alt="Selected Image 2" class="pet-image"></ion-img>
+        </ion-card>
+      </ion-card>
+    </ion-item>
+    <input type="file" #imageInput2 style="display: none;" (change)="handleImageInput($event, 2)" accept="image/*">
+  </ion-col>
+
+  <!-- Pet Image 3 -->
+  <ion-col size="12" sizeMd="4">
+    <ion-item (click)="imageInput3.click()">
+      <ion-icon name="close-circle" class="close-icon" (click)="removeImage(3)" *ngIf="imageURL3"></ion-icon>
+      <ion-label position="stacked">Pet Image 3</ion-label>
+      <ion-card class="image-card" [ngClass]="{'blue-filter': imageHovered3}" (mouseenter)="imageHovered3 = true" (mouseleave)="imageHovered3 = false">
+        <ion-img
+          *ngIf="!imageURL3"
+          src="./assets/selectimage.png"
+          alt="Add Image"
+          class="pet-image"
+          [ngClass]="{'zoomed': imageHovered3}"
+        ></ion-img>
+        <ion-icon *ngIf="!imageURL3" name="add-circle-outline" class="add-icon"></ion-icon>
+        <ion-card *ngIf="imageURL3" class="image-card">
+          <ion-img [src]="imageURL3" alt="Selected Image 3" class="pet-image"></ion-img>
+        </ion-card>
+      </ion-card>
+    </ion-item>
+    <input type="file" #imageInput3 style="display: none;" (change)="handleImageInput($event, 3)" accept="image/*">
+  </ion-col>
+</ion-row>
+
+<!-- Name Field -->
+<ion-item lines="none" class="name">
+  <ion-label position="stacked">Name</ion-label>
+  <ion-input [(ngModel)]="name" name="name" required placeholder="Type Name"></ion-input>
+</ion-item>
+<!-- Category Field -->
+<ion-item lines="none">
+<ion-label position="stacked">Category</ion-label>
+<ion-select [(ngModel)]="category" name="Category" required placeholder="Select Category" interface="popover">
+  <ion-select-option value="Dog">Dog</ion-select-option>
+  <ion-select-option value="Cat">Cat</ion-select-option>
+</ion-select>
+</ion-item>
+
+
+<!-- Breed Field -->
+<ion-item lines="none">
+  <ion-label position="stacked">Breed</ion-label>
+  <ion-input [(ngModel)]="breed" name="Breed" required placeholder="Type Breed"></ion-input>
+</ion-item>
+
+<!-- Age Field -->
+<ion-item lines="none" >
+  <ion-label position="stacked">Age</ion-label>
+  <ion-select [(ngModel)]="age" name="Age" required placeholder="Select Age"  interface="popover">
+    <ion-select-option *ngIf="category === 'Dog'" value="Adult(1-7 years)">Adult(1-7 years)</ion-select-option>
+    <ion-select-option *ngIf="category === 'Dog'" value="Young(7-9 months)">Young(7-9 months)</ion-select-option>
+    <ion-select-option *ngIf="category === 'Dog'" value="Baby(0-6 months)">Baby(0-6 months)</ion-select-option>
+    <ion-select-option *ngIf="category === 'Cat'" value="Mature(7-10 years)">Mature(7-10 years)</ion-select-option>
+    <ion-select-option *ngIf="category === 'Cat'" value="Adult(1-6 years)">Adult(1-6 years)</ion-select-option>
+    <ion-select-option *ngIf="category === 'Cat'" value="Kitten(0-1 year)">Kitten(0-1 year)</ion-select-option>
+  </ion-select>
+</ion-item>
+
+
+ <!-- Gender Field -->
+<ion-item lines="none">
+<ion-label position="stacked">Gender</ion-label>
+<ion-select [(ngModel)]="gender" name="gender" required placeholder="Select Gender" interface="popover">
+  <ion-select-option value="Male">Male</ion-select-option>
+  <ion-select-option value="Female">Female</ion-select-option>
+</ion-select>
+</ion-item>
+
+<!-- Description Field -->
+<ion-item lines="none">
+  <ion-label position="stacked">Description</ion-label>
+  <ion-textarea [(ngModel)]="description" name="Description" required placeholder="Type Description"></ion-textarea>
+</ion-item>
+
+
+
+
+
+
+
+
+
+
+
+        
+      </ng-container>
+
+      <!-- Step 2: Category, Breed, Age -->
+      <ng-container *ngIf="currentStep === 2">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Pet Details Confirmation</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Display Selected Images -->
+            <ion-item>
+              <ion-label position="stacked">Pet Images</ion-label>
+              <ion-row>
+                <ion-col size="6"  *ngIf="imageURL">
+                  <ion-card class="image-card">
+                    <ion-img [src]="imageURL" alt="Selected Image 1" class="pet-image"></ion-img>
+                  </ion-card>
+                </ion-col>
+                <ion-col size="6" *ngIf="imageURL2">
+                  <ion-card class="image-card">
+                    <ion-img [src]="imageURL2" alt="Selected Image 2" class="pet-image"></ion-img>
+                  </ion-card>
+                </ion-col>
+                <ion-col size="" *ngIf="imageURL3">
+                  <ion-card class="image-card">
+                    <ion-img [src]="imageURL3" alt="Selected Image 3" class="pet-image"></ion-img>
+                  </ion-card>
+                </ion-col>
+              </ion-row>
+            </ion-item>
+      
+           <!-- Display Selected Data -->
+<ion-item class="selected-data-container">
+  <ion-grid>
+    <ion-row>
+      <!-- First Column for Labels -->
+      <ion-col size="6">
+        <ion-list lines="none">
+          <ion-item>
+            <ion-label>Name:</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Category:</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Breed:</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Age:</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Gender:</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Description:</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+
+      <!-- Second Column for Data -->
+      <ion-col size="6">
+        <ion-list lines="none">
+          <ion-item>
+            <ion-text *ngIf="name">{{ name }}</ion-text>
+            <ion-text *ngIf="!name" color="medium">Empty</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-text *ngIf="category">{{ category }}</ion-text>
+            <ion-text *ngIf="!category" color="medium">Empty</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-text *ngIf="breed">{{ breed }}</ion-text>
+            <ion-text *ngIf="!breed" color="medium">Empty</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-text *ngIf="age">{{ age }}</ion-text>
+            <ion-text *ngIf="!age" color="medium">Empty</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-text *ngIf="gender">{{ gender }}</ion-text>
+            <ion-text *ngIf="!gender" color="medium">Empty</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-text *ngIf="description">{{ description }}</ion-text>
+            <ion-text *ngIf="!description" color="medium">Empty</ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-item>
+          </ion-card-content>
+        </ion-card>
+        
+      </ng-container>
+
+      
+    <!-- Step 3: Confirmation -->
+<ng-container *ngIf="currentStep === 3">
+  
+</ng-container>
+
+
+     <!-- Navigation Buttons -->
+<!-- Navigation Buttons -->
+<ion-grid>
+  <ion-row>
+    
+      <ion-button *ngIf="currentStep === 1" (click)="goToInventory()" expand="full" color="danger" class="cancel">Cancel</ion-button>
+   
+   
+    
+      <ion-button *ngIf="currentStep === 1" (click)="nextStep()" expand="full" class="next">Next</ion-button>
+    
+  </ion-row>
+</ion-grid>
+<ion-grid>
+<ion-row>
+    
+      <ion-button *ngIf="currentStep === 2" (click)="previousStep()" expand="full" color="secondary" class="previous">Previous</ion-button>
+    
+    
+      <ion-button *ngIf="currentStep === 2" type="submit" expand="full" color="success" class="submit">Upload</ion-button>
+    
+    </ion-row>
+   
+    </ion-grid>
+
+    </form>
+  </div>
+</ion-content>

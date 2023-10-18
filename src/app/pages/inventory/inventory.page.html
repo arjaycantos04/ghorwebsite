@@ -1,0 +1,158 @@
+
+  <ion-toolbar class="toolb">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-grid>
+      <ion-row size="auto">
+        <!-- Add any other elements you want in the toolbar -->
+        <ion-title color="dark" class="welcome">
+          <b>Pets Inventory</b>
+          <br />
+          <ion-label class="here">Inventory</ion-label>
+        </ion-title>
+        <ion-list>
+          <ion-buttons slot="end" class="notification-ellipsis">
+            <ion-button fill="clear" (click)="openNotificationPopover($event)" class="notification-button">
+              <ion-icon name="notifications-outline" class="notif"></ion-icon>
+              <ion-badge color="danger" class="notification-badge">{{ notificationsCount }}</ion-badge>
+            </ion-button>
+            <ion-button fill="clear" (click)="presentActionSheet()">
+              <ion-icon name="ellipsis-vertical-outline" class="person"></ion-icon>
+              </ion-button>
+              </ion-buttons>
+              </ion-list>
+          <!-- Hidden ion-select element -->
+          <!-- <ion-select #select interface="popover" [(ngModel)]="selectedOption" (ionChange)="onOptionChange()">
+            <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+            <ion-select-option value="option1">Option 1</ion-select-option>
+            <ion-select-option value="option2">Option 2</ion-select-option>
+            <ion-select-option value="option3">Option 3</ion-select-option>
+          </ion-select> -->
+       
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+
+<ion-content [fullscreen]="true" color="light">
+  <ion-toolbar color="light">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="9" class="ion-text-start"></ion-col>
+        <ion-col size="3">
+          <ion-toolbar color="light">
+            <ion-buttons slot="end" class="addp">
+              <ion-button (click)="goToAddPet()" color="dark">
+                <ion-icon name="add-outline" color="primary"></ion-icon>Add Pet
+              </ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+
+  <ion-toolbar color="light">
+    <ion-grid>
+      <ion-row class="filter-row">
+        <ion-col size="12" size-md="4">
+          <!-- Search bar -->
+          <ion-searchbar
+            [(ngModel)]="searchTerm"
+            (ionClear)="clearSearch()"
+            (ngModelChange)="filterItems()"
+            color="light"
+            placeholder="Search name or breed"
+          ></ion-searchbar>
+        </ion-col>
+        <ion-col size="12" size-md="2">
+          <!-- Gender filter -->
+          <ion-select
+            [(ngModel)]="filterGender"
+            (ionChange)="filterItems()"
+            class="filter-select"
+            color="light"
+            interface="popover"
+          >
+            <ion-select-option value="">All Genders</ion-select-option>
+            <ion-select-option value="Male">Male</ion-select-option>
+            <ion-select-option value="Female">Female</ion-select-option>
+          </ion-select>
+        </ion-col>
+        <ion-col size="12" size-md="2">
+          <!-- Category filter -->
+          <ion-select
+            [(ngModel)]="filterCategory"
+            (ionChange)="filterItems()"
+            class="filter-select"
+            color="light"
+            interface="popover"
+          >
+            <ion-select-option value="">All Categories</ion-select-option>
+            <ion-select-option value="Dog">Dog</ion-select-option>
+            <ion-select-option value="Cat">Cat</ion-select-option>
+          </ion-select>
+        </ion-col>
+        <ion-col size="12" size-md="2">
+          <!-- Age filter -->
+          <ion-select
+            [(ngModel)]="filterAge"
+            (ionChange)="filterItems()"
+            class="filter-select"
+            color="light"
+            interface="popover"
+          >
+            <ion-select-option value="">All Ages</ion-select-option>
+            <ion-select-option *ngIf="filterCategory === 'Dog'" value="Adult(1-7 years)">Adult(1-7 years)</ion-select-option>
+            <ion-select-option *ngIf="filterCategory === 'Dog'" value="Young(7-9 months)">Young(7-9 months)</ion-select-option>
+            <ion-select-option *ngIf="filterCategory === 'Dog'" value="Puppy(0-6 months)">Puppy(0-6 months)</ion-select-option>
+            <ion-select-option *ngIf="filterCategory === 'Cat'" value="Mature(7-10 years)">Mature(7-10 years)</ion-select-option>
+            <ion-select-option *ngIf="filterCategory === 'Cat'" value="Adult(1-6 years)">Adult(1-6 years)</ion-select-option>
+            <ion-select-option *ngIf="filterCategory === 'Cat'" value="Kitten(0-1 year)">Kitten(0-1 year)</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+
+  <ion-list *ngIf="displayedItems.length > 0">
+    <ion-row>
+      <ng-container *ngFor="let item of displayedItems; let i = index">
+        <ion-col size="6" size-md="3">
+          <ion-card  class="zoom-effect" (click)="goToEditPetPage(item.id)">
+            <!-- Card Content -->
+            <ion-card-header>
+              <ion-card-title>{{ item.name }}</ion-card-title>
+              <ion-card-subtitle>{{ item.category }}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-img [src]="item.image || 'assets/placeholder.png'" style="height: 200px;"></ion-img>
+              <p><b>Breed:</b> {{ item.breed }}</p>
+              <p><b>Age:</b> {{ item.age }}</p>
+              <p><b>Gender:</b> {{ item.gender }}</p>
+              <!-- <p><b>Description:</b> {{ item.description }}</p> -->
+            </ion-card-content>
+  
+            <!-- Item Options (Edit and Delete)
+            <ion-buttons class="ion-text-center">
+              <ion-button (click)="editItem(item)">
+                <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+              </ion-button>
+              <ion-button (click)="deleteItem(item)">
+                <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons> -->
+          </ion-card>
+        </ion-col>
+        <!-- Add a line break after every 4 items -->
+        <br *ngIf="(i + 1) % 4 === 0" />
+
+        
+      </ng-container>
+    </ion-row>
+  </ion-list>
+
+  <div class="no-pets-message" *ngIf="displayedItems.length === 0">
+    <p>There are no pets.</p>
+  </div>
+</ion-content>

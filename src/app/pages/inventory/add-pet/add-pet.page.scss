@@ -1,0 +1,144 @@
+.toolbar{
+  height:75px;
+ }
+ 
+ .logo {
+     width: 50px; /* Set the desired width */
+     height: 50px; /* Maintain the aspect ratio */
+     border-radius:50%;
+ }
+ 
+ .form-container {
+     display: flex;
+     align-items: flex-start;
+   }
+   
+   .form {
+     flex: 1;
+     margin-right: 10px; /* Adjust the margin as desired */
+   }
+   
+   .image-card {
+     width: 250px; /* Adjust the width to your desired value */
+     height: 250px; /* Adjust the height to your desired value */
+   }
+   
+   .pet-image {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+   
+   .invalid-input ion-input,
+ .invalid-input ion-select,
+ .invalid-input ion-textarea {
+   --ion-color-border: red;
+   --ion-color-invalid: red;
+ }
+ .success-toast {
+   --background: #00ff00; // Green color
+ }
+ 
+ .error-toast {
+   --background: #ff0000; // Red color
+ }
+ 
+ .notif {
+   height:30px;
+   width: 50px;
+ }
+ .person {
+   height:30px;
+   width: 50px;
+ }
+ 
+ .welcome {
+   font-size: 25px;
+ }
+ .here {
+   font-size: 12px;
+   
+ }
+ 
+ 
+ .step-container-row {
+  display: flex;
+  align-items: center; /* Vertically center the step containers */
+  justify-content: center; /* Horizontally center the step indicator */
+}
+ 
+ .step-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the step indicator */
+  align-items: center; /* Vertically center the step indicator */
+  height: 10vh; /* Set the height to 100% of the viewport height */
+}
+
+.step-indicator {
+  text-align: center;
+}
+
+.step-indicator span {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: lightgray; /* Default color for inactive steps */
+  color: white;
+  text-align: center;
+  line-height: 24px;
+  border-radius: 50%;
+  margin: 0 8px;
+}
+
+.step-indicator span.active {
+  background-color: blue; /* Color for the active step */
+}
+
+.step-indicator span.completed {
+  background-color: blue; /* Color for completed steps */
+}
+
+/* Add this to your component's CSS file */
+.pet-image.zoomed {
+  transform: scale(1.1); /* Adjust the scale factor as needed for the desired zoom level */
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+
+ion-button {
+  border-radius: 20px;
+}
+
+
+.selected-data-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Set the width as needed */
+}
+
+.cancel {
+  width: 100px;
+  
+}
+
+.next {
+  width: 100px;
+  
+
+}
+
+.previous {
+  width: 100px;
+}
+
+.submit{
+  width: 100px;
+  
+}
+
+
+* {
+  font-family: cambria;
+}
+
+

@@ -1,0 +1,98 @@
+.ion-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  
+}
+
+
+
+.p {
+  font-size: 15px;
+  color: #7e7e7eee;
+  text-align: center;
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.login-container {
+  height: 350px; /* Allow the container's height to adjust based on content */
+  width: 450px;
+  margin: 110px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.input-box {
+  text-align: center;
+  margin-bottom: 20px;
+  max-width: 90%;
+  margin: 0 auto; /* Center the input boxes horizontally */
+}
+
+or-divider {
+  height: 1px;
+  background-color: #ccc;
+  margin: 10px 0;
+}
+
+or-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+or-divider {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ccc;
+}
+
+or-text {
+  margin: 0 10px;
+}
+
+.email {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* CSS to change border radius and center the login button */
+ion-button {
+  --ion-color-primary: #2cdf47;
+  --ion-color-primary-contrast: #fff;
+  border-radius: 20px !important; /* Set the desired border radius with !important */
+  width: 90%; /* Set the desired width */
+  height: 35px; /* Set the desired height */
+  font-size: 12px; /* Set the desired font size */
+  display: block;
+  margin: 0 auto; /* Center align horizontally */
+}
+
+ion-icon {
+  margin-right: 8px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px; /* Add some margin at the top */
+}
+
+.error-label {
+  color: red; // Make the label text red
+}
+
+
+
+

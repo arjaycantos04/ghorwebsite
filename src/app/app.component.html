@@ -1,0 +1,74 @@
+<ion-app>
+  <ion-split-pane contentId="main" >
+    <ion-menu menuId="main-menu" content-id="main"  [ngClass]="{'minimized-menu': isMenuMinimized}">
+
+      <ion-content>
+        <ion-list class="menu-list">
+          <ion-toolbar>
+            <ion-grid>
+              <ion-row size="auto">
+                <ion-img src="./assets/logo-modified.png" class="logo"></ion-img>
+                <ion-title color="dark" class="ghor"><b>GHOR SHELTER</b></ion-title>
+                <!-- <ion-button fill="clear" (click)="toggleMenu()" class="menu-toggle-button">
+                  <ion-icon [name]="showMenu ? 'menu-outline' : 'close-outline'"></ion-icon>
+                </ion-button> -->
+              </ion-row>
+            </ion-grid>
+          </ion-toolbar>
+          <br>
+
+          <!-- Dashboard Menu Item -->
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerLink="/dashboard" class="dashb" routerLinkActive="active-menu-item" lines="none">
+              <ion-icon [name]="isActive('/dashboard') ? 'stats-chart-sharp' : 'stats-chart-outline'" [color]="isActive('/dashboard') ? 'primary' : 'dark'"></ion-icon>
+              <ion-label class="label" *ngIf="showLabels" [class.bold-label]="isActive('/dashboard')">Dashboard</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <!-- Pets Inventory Menu Item -->
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerLink="/inventory" class="menu-item-no-border" routerLinkActive="active-menu-item" lines="none">
+              <ion-icon [name]="isActive('/inventory') ? 'file-tray-stacked-sharp' : 'file-tray-stacked-outline'" [color]="isActive('/inventory') ? 'primary' : 'dark'"></ion-icon>
+              <ion-label class="label" *ngIf="showLabels" [class.bold-label]="isActive('/inventory')">Pets Inventory</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <!-- Announcement Menu Item -->
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerLink="/announcement" class="menu-item-no-border" routerLinkActive="active-menu-item" lines="none">
+              <ion-icon [name]="isActive('/announcement') ? 'calendar-sharp' : 'calendar-outline'" [color]="isActive('/announcement') ? 'primary' : 'dark'"></ion-icon>
+              <ion-label class="label" *ngIf="showLabels" [class.bold-label]="isActive('/announcement')">Announcement</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <!-- Adoption Menu Item -->
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerLink="/adoption" class="menu-item-no-border" routerLinkActive="active-menu-item" lines="none">
+              <ion-icon [name]="isActive('/adoption') ? 'paw-sharp' : 'paw-outline'" [color]="isActive('/adoption') ? 'primary' : 'dark'"></ion-icon>
+              <ion-label class="label" *ngIf="showLabels" [class.bold-label]="isActive('/adoption')">Adoption</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <!-- <ion-item class="menu-spacer" lines="none"></ion-item>
+          <ion-item class="menu-spacer" lines="none"></ion-item>
+          <ion-item class="menu-spacer" lines="none"></ion-item>
+          <ion-item class="menu-spacer" lines="none"></ion-item>
+          <ion-item class="menu-spacer" lines="true"></ion-item> -->
+          <!-- Logout Menu Item -->
+          <!-- <ion-menu-toggle auto-hide="false">
+            <ion-item routerLink="/login" class="menu-item-no-border" lines="none">
+              <ion-icon [name]="isActive('/login') ? 'log-out-sharp' : 'log-out-outline'" [color]="isActive('/login') ? 'primary' : 'dark'"></ion-icon>
+              <ion-label class="label" *ngIf="showLabels" [class.bold-label]="isActive('/login')">Logout</ion-label>
+            </ion-item>
+          </ion-menu-toggle> -->
+          
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-split-pane>
+
+    
+   
+</ion-app>
+
+

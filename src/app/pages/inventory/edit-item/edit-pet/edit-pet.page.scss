@@ -1,0 +1,34 @@
+.toolbar{
+    height:75px;
+   }
+
+   .editpetd {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  * {
+    font-family: cambria;
+  }
+
+  .save {
+    width: 120px;
+    margin-left: 10px;
+  }
+  .pet-image.zoomed {
+    transform: scale(1.1); /* Adjust the scale factor as needed for the desired zoom level */
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+  }
+
+  .pet-image {
+    width: 250px;
+    height: 200px;
+  }
+
+  .close {
+    width:20px;
+  }
+  .label {
+    font-size: 12px;
+  }
+

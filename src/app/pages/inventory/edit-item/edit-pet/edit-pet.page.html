@@ -1,0 +1,116 @@
+<ion-toolbar class="toolbar">
+  <ion-buttons slot="start">
+    <ion-back-button [defaultHref]="'/edit-item/' + petId"></ion-back-button>
+  </ion-buttons>
+  <ion-title class="editpetd">Edit Pet Details</ion-title>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true" color="light">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">edit-pet</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+  <!-- Edit Pet Form -->
+  <ion-card-content>
+    <ion-item>
+      
+      <ion-row>
+        <!-- Pet Image 1 -->
+        <ion-col size="12" sizeMd="4">
+            <ion-label class="label">Pet Image 1</ion-label>
+            
+              <ion-icon name="close-circle" class="close-icon" (click)="removeImage(1)" *ngIf="editedPet.image"></ion-icon>
+           
+            <ion-item (click)="imageInput1.click()">
+            <ion-card class="image-card" [ngClass]="{'blue-filter': imageHovered1}" (mouseenter)="imageHovered1 = true" (mouseleave)="imageHovered1 = false">
+              <ion-img [src]="editedPet.image || './assets/selectimage.png'" alt="Selected Image 1" class="pet-image" [ngClass]="{'zoomed': imageHovered1}"></ion-img>
+            </ion-card>
+          </ion-item>
+          <input type="file" #imageInput1 style="display: none;" (change)="handleImageInput($event, 1)" accept="image/*">
+        </ion-col>
+      
+        <!-- Pet Image 2 -->
+        <ion-col size="12" sizeMd="4">
+          <ion-label class="label">Pet Image 2</ion-label>
+          <ion-icon name="close-circle" class="close-icon" (click)="removeImage(2)" *ngIf="editedPet.image2" ></ion-icon>
+          
+          <ion-item (click)="imageInput2.click()">
+            
+            
+            <ion-card class="image-card" [ngClass]="{'blue-filter': imageHovered2}" (mouseenter)="imageHovered2 = true" (mouseleave)="imageHovered2 = false">
+              
+              <ion-img [src]="editedPet.image2 || './assets/selectimage.png'" alt="Selected Image 2" class="pet-image" [ngClass]="{'zoomed': imageHovered2}"  ></ion-img>
+            </ion-card>
+          </ion-item>
+          <input type="file" #imageInput2 style="display: none;" (change)="handleImageInput($event, 2)" accept="image/*">
+        </ion-col>
+      
+        <!-- Pet Image 3 -->
+        <ion-col size="12" sizeMd="4">
+          <ion-label class="label">Pet Image 3</ion-label>
+          <ion-icon name="close-circle" class="close-icon" (click)="removeImage(3)" *ngIf="editedPet.image3" ></ion-icon>
+          
+            
+           
+            <ion-card class="image-card" [ngClass]="{'blue-filter': imageHovered1}" (mouseenter)="imageHovered3 = true" (mouseleave)="imageHovered3 = false" >
+              <ion-item (click)="imageInput3.click()">
+              <ion-img [src]="editedPet.image3 || './assets/selectimage.png'" alt="Selected Image 3" class="pet-image" [ngClass]="{'zoomed': imageHovered3}"  ></ion-img>
+            
+            </ion-item></ion-card>
+          
+          <input type="file" #imageInput3 style="display: none;" (change)="handleImageInput($event, 3)" accept="image/*">
+        </ion-col>
+      </ion-row>
+      
+    </ion-item>
+
+    <ion-item lines="none" class="name">
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input [(ngModel)]="editedPet.name" name="name" required placeholder="Type Name" value="name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="stacked">Category</ion-label>
+      <ion-select [(ngModel)]="editedPet.category" name="Category" required placeholder="Select Category" interface="popover">
+        <ion-select-option value="Dog">Dog</ion-select-option>
+        <ion-select-option value="Cat">Cat</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="stacked">Breed</ion-label>
+      <ion-input [(ngModel)]="editedPet.breed" name="Breed" required placeholder="Type Breed"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="stacked">Age</ion-label>
+      <ion-select [(ngModel)]="editedPet.age" name="Age" required placeholder="Select Age" interface="popover">
+        <ion-select-option *ngIf="editedPet.category === 'Dog'" value="Adult(1-7 years)">Adult(1-7 years)</ion-select-option>
+        <ion-select-option *ngIf="editedPet.category === 'Dog'" value="Young(7-9 months)">Young(7-9 months)</ion-select-option>
+        <ion-select-option *ngIf="editedPet.category === 'Dog'" value="Baby(0-6 months)">Baby(0-6 months)</ion-select-option>
+        <ion-select-option *ngIf="editedPet.category === 'Cat'" value="Mature(7-10 years)">Mature(7-10 years)</ion-select-option>
+        <ion-select-option *ngIf="editedPet.category === 'Cat'" value="Adult(1-6 years)">Adult(1-6 years)</ion-select-option>
+        <ion-select-option *ngIf="editedPet.category === 'Cat'" value="Kitten(0-1 year)">Kitten(0-1 year)</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="stacked">Gender</ion-label>
+      <ion-select [(ngModel)]="editedPet.gender" name="gender" required placeholder="Select Gender" interface="popover">
+        <ion-select-option value="Male">Male</ion-select-option>
+        <ion-select-option value="Female">Female</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="stacked">Description</ion-label>
+      <ion-textarea [(ngModel)]="editedPet.description" name="Description" required placeholder="Type Description"></ion-textarea>
+    </ion-item>
+  </ion-card-content>
+  <ion-button expand="full" (click)="saveChanges()" class="save" color="success">Save Changes</ion-button>
+  
+</ion-card>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-content>
+  <ion-grid style="background-image: url('./assets/background.jpeg');" class="ion-grid">
+    <div class="login-container">
+      <h1><b>Admin Login</b></h1>
+      <div class="p">Hey, Enter your details to sign in to your account.</div><br><br>
+      <div class="input-box">
+        <ion-item [class.error]="emailInvalid">
+          <ion-label position="stacked" [class.error-label]="emailInvalid">Email</ion-label>
+          <ion-input type="email" [(ngModel)]="email" [clearOnEdit]="true" placeholder="Enter Email"></ion-input>
+          <ion-icon slot="end" name="mail-outline" class="email"></ion-icon>
+        </ion-item>
+        
+      </div>
+      <div class="input-box">
+        <ion-item [class.error]="passwordInvalid">
+          <ion-label position="stacked" [class.error-label]="passwordInvalid">Password</ion-label>
+          <ion-input
+            type="password"
+            [(ngModel)]="password"
+            [clearOnEdit]="true"
+            placeholder="Enter Password"
+          ></ion-input>
+        </ion-item>
+        
+      </div>
+      <br>
+      <ion-button expand="full" color="primary" (click)="login()" [disabled]="!email || !password"><b>Login</b></ion-button>
+      <a (click)="forgotPassword()" style="cursor: pointer; margin-left: 30px;">Forgot Password?</a>
+    </div>
+  </ion-grid>
+</ion-content>

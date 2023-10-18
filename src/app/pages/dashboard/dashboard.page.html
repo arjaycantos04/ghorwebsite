@@ -1,0 +1,216 @@
+
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <ion-grid>
+    <ion-row size="auto">
+  <!-- Add any other elements you want in the toolbar -->
+  <ion-title color="dark" class="welcome"><b>Welcome Back!</b> <br><ion-label class="here"> Here's what's happening with your animal shelter today.</ion-label></ion-title>
+  
+  <ion-list>
+    <ion-buttons slot="end" class="notification-ellipsis">
+      <ion-button fill="clear" (click)="openNotificationPopover($event)" class="notification-button">
+        <ion-icon name="notifications-outline" class="notif"></ion-icon>
+        <ion-badge color="danger" class="notification-badge">{{ notificationsCount }}</ion-badge>
+      </ion-button>
+      <ion-button fill="clear" (click)="presentActionSheet()">
+        <ion-icon name="ellipsis-vertical-outline" class="person"></ion-icon>
+ 
+    
+      <!-- Hidden ion-select element -->
+      <!-- <ion-select #select interface="popover" [(ngModel)]="selectedOption" (ionChange)="onOptionChange()">
+        <ion-icon name="person-circle-outline" slot="start"></ion-icon><ion-select-option value="option1">Option 1</ion-select-option>
+        <ion-select-option value="option2">Option 2</ion-select-option>
+        <ion-select-option value="option3">Option 3</ion-select-option>
+      </ion-select>      
+  </ion-list>
+   -->
+  </ion-button> </ion-buttons> </ion-list></ion-row></ion-grid>
+</ion-toolbar>
+
+
+ <!-- <ion-img src="./assets/ghor.png" class="logo"></ion-img>
+ <ion-title color="light"><b>sagipet</b></ion-title>
+    </ion-row>
+  </ion-grid> -->
+  
+
+
+
+
+<ion-content [fullscreen]="true" class="custom-content" color="light">
+
+  <ion-row>
+    <ion-col size="12" size-sm="6" size-md="4" size-lg="4">
+      <ion-card class="card" color="tertiary">
+        <ion-card-content>
+          <ion-row>
+            <ion-col>
+              <ion-img src="./assets/dogd.png" style="height: 100px;"></ion-img>
+            </ion-col>
+            <ion-col>
+              <ion-card-title class="dogcount" >{{ dogCount }}</ion-card-title>
+          <ion-card-subtitle class="numberdogs">Number of Dogs</ion-card-subtitle>
+                
+          </ion-col>
+          
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="12" size-sm="6" size-md="4" size-lg="4">
+      <ion-card class="card" color="success">
+        <ion-card-content>
+          <ion-row>
+            <ion-col>
+              <ion-img src="./assets/catd.png" style="height: 100px;"></ion-img>
+            </ion-col>
+            <ion-col>
+              <ion-card-title class="catcount">{{ catCount }}</ion-card-title>
+            <ion-card-subtitle class="numbercats">Number of Cats</ion-card-subtitle>
+                
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col >
+      <ion-card class="card" color="warning">
+        <ion-card-content>
+          <ion-row>
+            <ion-col>
+              <ion-img src="./assets/forms.png" style="height: 100px;"></ion-img>
+            </ion-col>
+            <ion-col>
+              <ion-card-title class="catcount">0</ion-card-title>
+            <ion-card-subtitle class="numbercats"> Applications</ion-card-subtitle>
+                
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    
+    
+  </ion-row>
+  
+  
+
+
+
+
+<br>
+<ion-row>
+  <ion-col size="12" size-sm="6" size-md="4" size-lg="4">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>New Adopted Pets</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item >
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="./assets/snoopy.jpg" />
+          </ion-thumbnail>
+          <ion-label>Snoopy</ion-label>
+        </ion-item>
+  
+        <ion-item >
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="./assets/browny.jpg" />
+          </ion-thumbnail >
+          <ion-label>Browny</ion-label>
+        </ion-item>
+  
+        <ion-item >
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="./assets/kitty.jpg" />
+          </ion-thumbnail>
+          <ion-label>Kitty</ion-label>
+        </ion-item>
+  
+      </ion-list>
+    </ion-card-content>
+    <ion-button fill="clear" color="medium">See All <ion-icon name="chevron-forward-outline"></ion-icon></ion-button>
+  </ion-card>
+</ion-col>
+<ion-col size="12" size-sm="6" size-md="4" size-lg="4">
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title>Top Adopted Breeds </ion-card-title>
+      
+      
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item >
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="./assets/puspin.png" />
+          </ion-thumbnail>
+          <ion-label>Puspin</ion-label>
+        </ion-item>
+  
+        <ion-item >
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="./assets/aspin.jpg" />
+          </ion-thumbnail >
+          <ion-label>Aspin</ion-label>
+        </ion-item>
+  
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="./assets/shihtzu.jpg" />
+          </ion-thumbnail>
+          <ion-label>Shih Tzu</ion-label>
+        </ion-item>
+  
+      </ion-list>
+    </ion-card-content>
+    <ion-button fill="clear" color="medium">See All <ion-icon name="chevron-forward-outline"></ion-icon></ion-button>
+  </ion-card>
+</ion-col>
+
+<ion-col size="12" size-sm="6" size-md="4" size-lg="4">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Recent Users</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item >
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="./assets/ayla.jpg" />
+          </ion-thumbnail>
+          <ion-label>Aila Dedrey</ion-label>
+        </ion-item>
+  
+        <ion-item >
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="./assets/jullianne.jpg" />
+          </ion-thumbnail >
+          <ion-label>Christine Jullianne</ion-label>
+        </ion-item>
+  
+        <ion-item >
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="./assets/rj.png" />
+          </ion-thumbnail>
+          <ion-label>Ar-jay</ion-label>
+        </ion-item>
+  
+        <ion-item >
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="./assets/ivana.jpg" />
+          </ion-thumbnail>
+          <ion-label>Ivana</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+    <ion-button fill="clear" color="medium">See All <ion-icon name="chevron-forward-outline"></ion-icon></ion-button>
+  </ion-card>
+</ion-col>
+  </ion-row>
+  
+</ion-content>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sagipet-55f8d": {
+      "hosting": {
+        "app": [
+          "sagipet-55f8d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sagipet-55f8d"
+  }
+}

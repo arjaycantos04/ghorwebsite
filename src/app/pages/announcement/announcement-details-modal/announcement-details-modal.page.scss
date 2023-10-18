@@ -1,0 +1,35 @@
+.titledetails{
+    background-color: #fff; /* Set a background color */
+    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    margin: 16px; /* Add margin to create spacing */
+    padding: 16px; /* Add padding for spacing inside the card */
+    font-size: 24px; /* Increase font size */
+    
+    color: #333; /* Set text color */
+    margin-bottom: 16px; /* Add spacing at the bottom */
+  }
+  
+  
+  .sumdetails {
+    background-color: #fff; /* Set a background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    margin: 16px; /* Add margin to create spacing */
+    padding: 16px; /* Add padding for spacing inside the card */
+    font-size: 24px; /* Increase font size */
+    
+    color: #333; /* Set text color */
+    margin-bottom: 16px; /* Add spacing at the bottom */
+    height: 250px;
+  }
+
+
+
+  .modal-wrapper {
+    width: 60%;
+    height: 60%;
+    max-width: 80%; /* Set a maximum width if needed */
+    max-height: 80%; /* Set a maximum height if needed */
+    margin: auto; /* Center the modal on the screen */
+  }
+  

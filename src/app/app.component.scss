@@ -1,0 +1,87 @@
+
+
+  ion-toolbar {
+    --ion-font-family: 'arial';
+    border-bottom: 1px solid #000000;
+    height: 65px;
+    
+}
+
+// .ghor {
+//   font-family: cursive;
+// }
+.logo {
+  width: 50px; /* Set the desired width */
+  height: 50px; /* Maintain the aspect ratio */
+  border-radius:50%;
+}
+
+  
+  .active-menu-item {
+    --background: #eaeaeaac; /* Change this to your desired background color */
+    
+    border-radius: 8px;
+  }
+
+  
+  
+.header-constaint {
+    position:absolute;
+    top: 30px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.admin{
+    height:80px;
+    width:80px;
+    border-radius: 50%;
+    border: 7px solid #5e7ccc;
+    
+}
+ h2{
+    font-weight: 300;
+    color: white;
+
+ }
+
+/* Regular menu styles */
+ion-menu {
+  width:60px;
+  transition: width 0.3s; /* Add a transition for smooth animation */
+  
+  
+  
+}
+
+ion-icon.primary {
+  --ion-color-base: var(--ion-color-primary); // Set the filled icon color to the primary color
+  font-size: inherit; // Ensure the font size is inherited
+  transform: scale(1.2); // You can adjust the scale as needed
+}
+
+ion-icon {
+  padding-right: 40px; /* Adjust the padding to your desired spacing */
+}
+
+.bold-label {
+  font-weight: bold;
+  
+}
+ 
+.menu-list {
+  margin-right: 10px;
+  margin-left: 10px;
+}     
+
+.label {
+  font-family: cambria;
+}
+
+@media (max-width: 1000px) {
+  ion-menu {
+      width: 100%;
+  }
+}
+

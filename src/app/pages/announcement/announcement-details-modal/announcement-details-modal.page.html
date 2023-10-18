@@ -1,0 +1,24 @@
+
+
+<ion-header [translucent]="true" >
+  <ion-toolbar color="primary">
+    <ion-title>Announcement Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="titledetails">
+    <ion-card-header class="title">Announcement Title:</ion-card-header>
+    <ion-card-content class="custom-card-content">{{ announcement?.title }}</ion-card-content>
+  </ion-card>
+
+  <ion-card class="sumdetails">
+    <ion-card-header class="summary">Summary:</ion-card-header>
+    <ion-card-content class="custom-card-content">{{ announcement?.content }}</ion-card-content>
+  </ion-card>
+</ion-content>

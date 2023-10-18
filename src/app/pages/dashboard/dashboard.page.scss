@@ -1,0 +1,148 @@
+
+
+ion-toolbar {
+    --ion-font-family: 'arial';
+    height: 75px;
+    display: flex;
+}
+.button-like {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hidden-select {
+  display: none;
+}
+
+.notif {
+  height:30px;
+  width: 50px;
+}
+.person {
+  height:30px;
+  width: 50px;
+}
+
+.custom-content {
+  background-color: gray; /* Set the desired background color for the content */
+}
+.welcome {
+  font-size: 25px;
+}
+.here {
+  font-size: 10px;
+  
+}
+.numbercats {
+    text-align: center;
+  display: block;
+  
+}
+.catcount {
+    text-align: center;
+  display: block;
+  font-size: 60px;
+}
+.numberdogs {
+    text-align: center;
+  display: block;
+}
+.dogcount {
+    text-align: center;
+  display: block;
+  font-size: 60px;
+}
+
+.logo {
+    width: 50px; /* Set the desired width */
+    height: 50px; /* Maintain the aspect ratio */
+    border-radius:50%;
+}
+
+.dash{
+    border: 10px, black;
+    width:50px;
+}
+
+.card {
+    
+    height:150px;
+    width: 300px;
+    
+}
+
+.dashboard{
+    font-family: verdana;
+}
+
+.cards-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+
+.dash1 {
+    width:90px;
+    position: center;
+}
+
+.card-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+ 
+
+  .card {
+    transition: transform 0.3s; /* Add a smooth transition effect to the card */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Increase the size of the card on hover */
+  }
+  
+  .dogcount,
+  ion-card-title {
+    transition: transform 0.3s; /* Add a smooth transition effect to the elements */
+  }
+  
+  .card:hover .dogcount,
+  .card:hover ion-card-title {
+    transform: scale(1.2); /* Increase the size of the elements on hover */
+  }
+  
+  .person {
+    color: black;
+  }
+    
+.notif{
+  color: black;
+  
+}
+  
+.notification-button {
+  position: relative; /* Set the position of the button to relative */
+ 
+}
+
+.notification-badge {
+  position: absolute; /* Set the position of the badge to absolute */
+  top: 1; /* Position it at the top */
+  right: 1; /* Position it at the right */
+  transform: translate(50%, -50%); /* Center the badge */
+  font-size: 0.8em; /* Adjust the font size as needed */
+  min-width: 1.5em; /* Ensure a minimum width for the badge */
+  padding: 0.2em 0.5em; /* Adjust padding as needed */
+  background-color: red; /* Example background color for the badge */
+  border-radius: 50%; /* Make the badge circular */
+}
+
+
+
+

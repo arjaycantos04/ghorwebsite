@@ -1,0 +1,405 @@
+.toolbar{
+  height:75px;
+ }
+ 
+ .logo {
+     width: 50px; /* Set the desired width */
+     height: 50px; /* Maintain the aspect ratio */
+     border-radius:50%;
+ }
+ 
+ .form-container {
+     display: flex;
+     align-items: flex-start;
+   }
+   
+   .form {
+     flex: 1;
+     margin-right: 10px; /* Adjust the margin as desired */
+   }
+   
+   .image-card {
+     width: 250px; /* Adjust the width to your desired value */
+     height: 250px; /* Adjust the height to your desired value */
+   }
+   
+   .pet-image {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+   
+   .invalid-input ion-input,
+ .invalid-input ion-select,
+ .invalid-input ion-textarea {
+   --ion-color-border: red;
+   --ion-color-invalid: red;
+ }
+ .success-toast {
+   --background: #00ff00; // Green color
+ }
+ 
+ .error-toast {
+   --background: #ff0000; // Red color
+ }
+ 
+ .notif {
+   height:30px;
+   width: 50px;
+ }
+ .person {
+   height:30px;
+   width: 50px;
+ }
+ 
+ .welcome {
+   font-size: 25px;
+ }
+ .here {
+   font-size: 12px;
+   
+ }
+ 
+ 
+ .step-container-row {
+  display: flex;
+  align-items: center; /* Vertically center the step containers */
+  justify-content: center; /* Horizontally center the step indicator */
+}
+ 
+ .step-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the step indicator */
+  align-items: center; /* Vertically center the step indicator */
+  height: 10vh; /* Set the height to 100% of the viewport height */
+}
+
+.step-indicator {
+  text-align: center;
+}
+
+.step-indicator span {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: lightgray; /* Default color for inactive steps */
+  color: white;
+  text-align: center;
+  line-height: 24px;
+  border-radius: 50%;
+  margin: 0 8px;
+}
+
+.step-indicator span.active {
+  background-color: blue; /* Color for the active step */
+}
+
+.step-indicator span.completed {
+  background-color: blue; /* Color for completed steps */
+}
+
+/* Add this to your component's CSS file */
+.pet-image.zoomed {
+  transform: scale(1.1); /* Adjust the scale factor as needed for the desired zoom level */
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+
+ion-button {
+  border-radius: 20px;
+}
+
+
+.selected-data-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Set the width as needed */
+}
+
+.cancel {
+  width: 100px;
+  
+}
+
+.next {
+  width: 100px;
+  margin-left: 390px;
+
+}
+
+.previous {
+  width: 100px;
+}
+
+.submit{
+  width: 100px;
+  margin-left: 390px;
+}
+
+
+* {
+  font-family: cambria;
+}
+
+.bold {
+  
+  font-weight: bold;
+  color: #000000;
+}
+.italic {
+  
+  font-style: italic;
+  color: #000000;
+}
+.person {
+  color: black;
+}
+  
+.notif{
+color: black;
+
+}
+
+.notification-button {
+position: relative; /* Set the position of the button to relative */
+
+}
+
+.notification-badge {
+position: absolute; /* Set the position of the badge to absolute */
+top: 1; /* Position it at the top */
+right: 1; /* Position it at the right */
+transform: translate(50%, -50%); /* Center the badge */
+font-size: 0.8em; /* Adjust the font size as needed */
+min-width: 1.5em; /* Ensure a minimum width for the badge */
+padding: 0.2em 0.5em; /* Adjust padding as needed */
+background-color: red; /* Example background color for the badge */
+border-radius: 50%; /* Make the badge circular */
+}
+
+
+
+
+
+
+
+/* Global Styles (styles.css or your custom CSS file) */
+
+ion-card {
+  border-radius: 10px; /* Add rounded corners to cards */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+ion-item {
+  --highlight-height: 0; /* Remove item highlight effect */
+}
+
+ion-button {
+  border-radius: 8px; /* Add rounded corners to buttons */
+  
+}
+
+
+/* Center the Create Announcement title */
+.title {
+  text-align: center;
+}
+
+/* Center the form inputs */
+
+
+/* Add spacing between elements */
+ion-card {
+  margin-bottom: 20px;
+}
+
+/* Add spacing between columns and adjust column widths */
+.date-column {
+  width: 20%; /* Adjust the width as needed */
+  padding-right: 10px; /* Add padding for spacing */
+}
+
+.announcement-column {
+  width: 100%; /* Adjust the width as needed */
+  padding: 0 10px; /* Add padding for spacing */
+}
+
+.details-column {
+  width: 100%; /* Adjust the width as needed */
+  padding-left: 10px; /* Add padding for spacing */
+}
+
+
+
+
+
+/* Override the default background color of the toolbar */
+ion-toolbar {
+  --background: #ffffff; /* Set a white background for all toolbars */
+}
+
+
+
+/* Style the Create Announcement button */
+ion-button[color="primary"] {
+  --background: #007bff; /* Change the button background color */
+  --color: #ffffff; /* Change the button text color */
+}
+
+
+.createann{
+  box-shadow: 0px 0px 1px 1px #000000;
+  border-radius: 10px;
+}
+
+
+/* Add these styles to your component's CSS (announcement.page.scss) */
+
+.announcement-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.date-column,
+.announcement-column,
+.details-column,
+.delete-column,
+.delete {
+  padding: 5px; /* Adjust the padding to control the space */
+  text-align: center;
+  border-bottom: 1px solid #ccc; /* Add border to the bottom of each row */
+  
+}
+
+.date,
+.announcement-row {
+  padding: 10px; /* Adjust the padding to control the space */
+  text-align: center;
+  border-bottom: 1px solid #ccc; /* Add border to the bottom of each row */
+}
+
+.details {
+  box-shadow: 0px 0px 1px 1px #054093;
+  border-radius: 5px;
+}
+
+
+
+
+/* Add spacing between columns and adjust column widths */
+.date-column {
+  width: 20%;
+  padding-right: 10px;
+}
+
+.announcement-column {
+  width: 60%;
+  padding: 0 10px;
+}
+
+.details-column {
+  width: 20%;
+  padding-left: 10px;
+}
+
+/* Remove any margin and padding from the table */
+table.announcement-table {
+  width: 100%;
+  
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the card with a white background */
+.announcement-card {
+  background-color: white;
+  border-radius: 1px; /* Optional: Add rounded corners to the card */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  margin: 16px; /* Optional: Add margin around the card */
+  height: 100%;
+}
+
+.publish {
+  width: 100px;
+  
+}
+
+ion-modal {
+  --height: 70%;
+  --width: 50%;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+}
+
+ion-modal::part(backdrop) {
+  background: rgba(209, 213, 219);
+  opacity: 1;
+}
+
+ion-modal ion-toolbar {
+  --background: rgb(14 116 144);
+  --color: white;
+}
+
+
+
+
+
+/* Add these styles to your global CSS file or component-specific CSS */
+
+/* Custom styles for the ion-card */
+.custom-card {
+  background-color: #fff; /* Set a background color */
+  border-radius: 10px; /* Add rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  margin: 16px; /* Add margin to create spacing */
+  padding: 16px; /* Add padding for spacing inside the card */
+}
+
+/* Custom styles for the ion-card-header */
+.custom-card-header {
+  font-size: 18px; /* Increase font size */
+  font-weight: bold; /* Apply bold font weight */
+  color: #333; /* Set text color */
+  margin-bottom: 16px; /* Add spacing at the bottom */
+}
+
+/* Custom styles for the ion-card-content */
+.custom-card-content {
+  font-size: 16px; /* Adjust font size as needed */
+  line-height: 1.4; /* Adjust line height for readability */
+  color: #666; /* Set text color */
+}
+
+
+.titledetails{
+  background-color: #fff; /* Set a background color */
+  border-radius: 10px; /* Add rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  margin: 16px; /* Add margin to create spacing */
+  padding: 16px; /* Add padding for spacing inside the card */
+  font-size: 24px; /* Increase font size */
+  font-weight: bold; /* Apply bold font weight */
+  color: #333; /* Set text color */
+  margin-bottom: 16px; /* Add spacing at the bottom */
+}
+
+
+.sumdetails {
+  background-color: #fff; /* Set a background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  margin: 16px; /* Add margin to create spacing */
+  padding: 16px; /* Add padding for spacing inside the card */
+  font-size: 20px; /* Increase font size */
+  font-weight: bold; /* Apply bold font weight */
+  color: #333; /* Set text color */
+  margin-bottom: 16px; /* Add spacing at the bottom */
+  height: 200px;
+}
+
+.empty-announcement-message{
+  color:#000000;
+  
+}
+

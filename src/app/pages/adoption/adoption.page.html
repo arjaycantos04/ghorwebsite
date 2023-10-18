@@ -1,0 +1,60 @@
+
+<ion-toolbar class="toolbar">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <ion-grid>
+    <ion-row size="auto">
+      <ion-title color="dark" class="welcome">
+        <b>Adoption</b> <br /><ion-label class="here"> Adoption Applications</ion-label>
+      </ion-title>
+      <ion-list>
+        <ion-buttons slot="end" class="notification-ellipsis">
+          <ion-button fill="clear" (click)="openNotificationPopover($event)" class="notification-button">
+            <ion-icon name="notifications-outline" class="notif"></ion-icon>
+            <ion-badge color="danger" class="notification-badge">{{ notificationsCount }}</ion-badge>
+          </ion-button>
+          <ion-button fill="clear" (click)="presentActionSheet()">
+            <ion-icon name="ellipsis-vertical-outline" class="person"></ion-icon>
+            </ion-button>
+            </ion-buttons>
+            </ion-list>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>
+
+
+  
+      
+       
+
+        <!-- Content for Adoption Application card goes here -->
+        <!-- You can place the application form, applicant details, etc. inside this card -->
+        <ion-content color="light">
+          <ion-row>
+            <ion-col size="6" *ngFor="let application of applications">
+              <ion-card class="appli">
+                <ion-card-content>
+                  <ion-row>
+                    <ion-col>
+                      <ion-img [src]="application.imageUrl" style="height: 200px;"></ion-img>
+                    </ion-col>
+                    <ion-col>
+                      <ion-list>
+                        <ion-item>
+                          <p><b>Pet's Name:</b><br>{{ application.petName }}</p>
+                        </ion-item>
+                        <ion-item>
+                          <p><b>Adopter's Name:</b><br>{{ application.adopterName }}</p>
+                        </ion-item>
+                        <ion-button expand="full" color="warning">Review</ion-button>
+                      </ion-list>
+                    </ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          
+     
+</ion-content>
