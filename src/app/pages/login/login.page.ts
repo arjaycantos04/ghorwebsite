@@ -67,10 +67,13 @@ export class LoginPage {
   }
 
   async openSignUpModal() {
+    await this.modalController.dismiss(); // Close the sign-up modal
     const modal = await this.modalController.create({
       component: SignupModalPage,
+      
     });
     return await modal.present();
+    
   }
 
   async closeModal() {

@@ -11,28 +11,38 @@
       <form [formGroup]="signupForm" (ngSubmit)="signup()">
         <!-- First Name -->
         <ion-item>
-          <ion-label position="floating">First Name</ion-label>
-          <ion-input formControlName="firstName" type="text"></ion-input>
+          <ion-label position="floating"  style="
+          font-family: cambria;">First Name</ion-label>
+          <ion-input formControlName="firstName" type="text" style="
+          font-family: cambria;"></ion-input>
         </ion-item>
         <!-- Last Name -->
         <ion-item>
-          <ion-label position="floating">Last Name</ion-label>
+          <ion-label position="floating"  style="
+          font-family: cambria;" style="
+          font-family: cambria;">Last Name</ion-label>
           <ion-input formControlName="lastName" type="text"></ion-input>
         </ion-item>
         <!-- Email -->
         <ion-item>
-          <ion-label position="floating">Email</ion-label>
-          <ion-input formControlName="email" type="email"></ion-input>
+          <ion-label position="floating" style="
+          font-family: cambria;">Email</ion-label>
+          <ion-input formControlName="email" type="email" style="
+          font-family: cambria;"></ion-input>
         </ion-item>
         <!-- Password -->
         <ion-item>
-          <ion-label position="floating">Password</ion-label>
-          <ion-input formControlName="password" type="password"></ion-input>
+          <ion-label position="floating"  style="
+          font-family: cambria;">Password</ion-label>
+          <ion-input formControlName="password" type="password" style="
+          font-family: cambria;"></ion-input>
         </ion-item>
         <!-- Confirm Password -->
         <ion-item>
-          <ion-label position="floating">Confirm Password</ion-label>
-          <ion-input formControlName="confirmPassword" type="password"></ion-input>
+          <ion-label position="floating"  style="
+          font-family: cambria;">Confirm Password</ion-label>
+          <ion-input formControlName="confirmPassword" type="password" style="
+          font-family: cambria;"></ion-input>
         </ion-item>
 
         <!-- Display error messages for email field -->
@@ -45,13 +55,13 @@
 
         <!-- Display password match error message -->
         <div *ngIf="passwordsDoNotMatch" color="danger">Passwords do not match</div>
-
+<br><br>
         <!-- Sign Up Button -->
         <ion-button color="success" expand="full" type="submit">Sign Up</ion-button>
 
         <!-- Already a member link -->
         <div class="already-member">
-          Already have an account? <a (click)="openLoginPage()">Sign In</a>
+          Already have an account? <a (click)="closeModal2()">Sign In</a>
         </div>
       </form>
     </ion-col>
