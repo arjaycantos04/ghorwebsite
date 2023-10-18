@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-header collapse="fade">
+    <ion-toolbar>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+        <div style="display: flex; align-items: center;">
+          <img src="../../assets/icon/logo.jpg" style="height: 50px; margin-right: 8px; margin-bottom: 8px;">
+        </div>
+
+        <ion-segment fill="clear" class="ion-padding" value="whatweare" style="width: 50%; max-width: 500px;" slot="end">
+          <ion-segment-button value="whatweare">
+            <ion-label>What we Are</ion-label>
+          </ion-segment-button>
+
+          <ion-segment-button color="light" value="whatwedo">
+            <ion-label>What we Do</ion-label>
+          </ion-segment-button>
+
+          <ion-segment-button color="light" value="whatyoucando">
+            <ion-label>What you can DO</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+        <ion-button aria-label="news" fill="clear" slot="end" class="white-button">
+          <ion-icon class="icons" name="person-circle-outline" size="large" aria-hidden="true"></ion-icon>
+        </ion-button>
+      </div>
+
+    </ion-toolbar>
+  </ion-header>
+</ion-header>
+
+<div class="backgroundz"></div>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+        <ion-col>
+          <div class="background-design"></div>
+          
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

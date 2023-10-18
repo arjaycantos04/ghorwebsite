@@ -1,0 +1,130 @@
+@media only screen and (min-width: 992px) {
+    .container {
+      width: 45%;
+      margin:auto;
+     }
+  }
+  *{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  img {
+    height: 60px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px; /* Adjust the margin values as needed */
+    height: 100vh; 
+  }
+  
+  .content {
+    
+    border: none; /* Remove the border */
+    box-shadow: none; /* Remove any box shadow */
+    padding-left: 40px; /* Optionally, remove any margin or padding */
+    padding-right: 40px; /* Optionally, remove any margin or padding */
+    
+  
+  }
+  .invisible-button {
+    background: none;
+    border: none;
+    color: transparent;
+  }
+  
+  
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* Allow the title to take the available space in the header */
+  }
+  .ion-text-center {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 30px;
+  }
+  
+  
+  #container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+    color: #8c8c8c;
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  ion-toolbar {
+    display: flex;
+  }
+  
+  
+  
+  
+  ion-button {
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  
+  h1 {
+    text-align: center;
+  }
+  
+  
+  
+  .or {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .orline {
+  flex-grow: 1;
+  height: 1px;
+  background-color:black ;
+  }
+  
+  .ortext{
+    padding: 40px 5px;
+  }
+  
+  .center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+  }
+  
+  .align-center {
+    display: flex;
+    align-items: center;
+  }
+.already-member {
+    margin-top: 30px;
+    margin-left: 150px;
+}
+  
+  

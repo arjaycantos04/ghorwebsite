@@ -1,0 +1,133 @@
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 45%;
+    margin:auto;
+   }
+  }
+*{
+  font-family: lato;
+}
+img {
+  height: 60px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+
+ion-toolbar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: none;
+  display: flex;
+  justify-content: space-between;
+  --background: #6a8ce8;
+}
+// toolbar action buttons
+ion-searchbar{
+width: 40px;
+height: 20px;
+}
+.white-button {
+--color: #ffffff; /* Set the color to white */
+font-size: 25px;
+}
+ion-segment{
+  background: none;
+  ion-segment-button{
+    font-size: 1rem;
+    --border-width: 0;
+    --padding-start: 8px;
+    --padding-bottom: 0px;
+    --padding-end: 0px;
+    --padding-top: 0px;
+    --background-checked: #6a8ce8;
+    --indicator-color: transparent!important;
+    --color:#ffffff;
+    --color-checked: #ffffff;
+    font-weight: bold;
+  }
+}
+
+// end of toolbar action buttona
+
+.icons {
+width:30px;
+height: 30px;
+}
+
+//end of toolbar action buttons
+
+ion-content{
+  --background: linear-gradient(to bottom, #e8e8e8, #6a8ce8);
+}
+
+ion-select-option{
+  width: 10px;
+}
+
+.background-design{
+  height: 470px;
+  width: 1550px;
+  background: blue;
+  background: linear-gradient(90deg, #fbfbfb 0%, #3d6ae6 100%);
+  box-shadow: 0px 1px 10px rgba($color: #000000, $alpha: 1.0) (98, 140, 255, 0.5);
+  transform: rotate(-15deg);
+  border-radius: 10px 10px 10px 50px;
+  margin-left: 1px;
+  margin-top: -200px;
+  margin-bottom:60px
+}
+
+.background {
+background-image: url(../../assets/icon/bc1.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+width: 100%;
+height: 100vh;
+}
+.content{
+  position: relative;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.content .title{
+  color: #1f1f25;
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  display: inline-block;
+  margin-bottom: 1px;
+  background: linear-gradient(120deg, #141414 20.69%, #7644ff 50.19%,#fd4766 79.69%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.content h1{
+  color: #8975fb;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 70px;
+  text-transform: inherit;
+  width: 100%;
+}
+.content h1 span{
+  color: #fd4766;
+}
+.content p{
+  color: #686868;
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+
+.container .img{
+align-items: end;
+border-radius: 10px;
+}
+
+

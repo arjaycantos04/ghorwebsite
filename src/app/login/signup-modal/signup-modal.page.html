@@ -1,0 +1,43 @@
+
+
+<ion-content class="centered-content">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Sign Up</ion-title>
+    <ion-button (click)="closeModal()" aria-label="close" fill="clear" class="close" slot="end">
+      <ion-icon class="icons" name="close" aria-hidden="true"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+
+  <ion-card class="content">
+    <ion-col size="12">
+      <form class="signup-form">
+        
+        <ion-item>
+          <ion-label position="floating">First Name</ion-label>
+          <ion-input [(ngModel)]="firstName" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Last Name</ion-label>
+          <ion-input [(ngModel)]="lastName" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input [(ngModel)]="email" type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input [(ngModel)]="password" type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirm Password</ion-label>
+          <ion-input [(ngModel)]="confirmPassword" type="password"></ion-input>
+        </ion-item>
+
+        <ion-button color="success" expand="full" (click)="signup()">Sign Up</ion-button>
+        <div class="already-member">
+          Already have an account? <a (click)="openLoginPage()">Sign In</a>
+        </div>
+      </form>
+    </ion-col>
+  </ion-card>
+</ion-content>

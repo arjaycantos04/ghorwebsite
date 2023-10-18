@@ -1,0 +1,48 @@
+
+<ion-content class="centered-content">
+
+ <ion-toolbar>
+          <ion-title class="ion-text-center">Login</ion-title>
+          <ion-button (click)="closeModal()" aria-label="close" fill="clear" class="close" slot="end">
+            <ion-icon class="icons" name="close" aria-hidden="true"></ion-icon>
+          </ion-button>
+
+          </ion-toolbar>
+          
+
+    <ion-card class="content">
+      <ion-col size="12">
+        <form class="login-form">
+          <ion-item>
+            <ion-input label="Email" labelPlacement="floating" [counter]="true" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Password" type="password" labelPlacement="floating" [counter]="true"></ion-input>
+          </ion-item>
+          <br>
+          <ion-checkbox></ion-checkbox> Remember me
+          <a class="ion-float-right">Forgot Password?</a><br><br><br>
+          <ion-button color="success" expand="full">Login</ion-button>
+          <div class="or">
+            <div class="orline"></div>
+            <div class="ortext">or continue with</div>
+            <div class="orline"></div>
+          </div>
+
+          <ion-button color="danger" (click)="signInWithGoogle()">
+            <ion-icon name="logo-google"></ion-icon>Continue with Google
+          </ion-button>
+
+          <div class="center-container">
+            <div class="align-center">
+              <div class="do"></div>
+              <div class="dotext">Don't have an account?</div>
+              <a class="ion-float-right" (click)="openSignUpModal()">Sign up</a>
+            </div>
+          </div>
+        </form>
+      </ion-col>
+    
+    
+  </ion-card>
+</ion-content>

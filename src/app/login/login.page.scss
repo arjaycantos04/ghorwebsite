@@ -12,10 +12,7 @@ img {
   margin-top: 10px;
   margin-left: 10px;
 }
-.modal-content {
-  max-height: 80vh; /* Set a maximum height for the content to fit within the modal */
-  overflow: hidden; /* Hide any overflow content */
-}
+
 
 .container {
   display: flex;
@@ -51,10 +48,6 @@ img {
   margin-left: 20px;
   margin-top: 10px;
   font-size: 30px;
-}
-
-.ion-float-right {
-  cursor: pointer;
 }
 
 

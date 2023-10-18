@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators, ValidatorFn, AbstractControl } from
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ToastController } from '@ionic/angular';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { LoginPage } from '.././login.page';
+
 
 @Component({
   selector: 'app-signup-modal',
@@ -21,6 +23,7 @@ export class SignupModalPage {
     private afAuth: AngularFireAuth,
     public toastController: ToastController,
     private afFirestore: AngularFirestore,
+  
   ) {
     this.signupForm = this.formBuilder.group(
       {
@@ -52,8 +55,12 @@ export class SignupModalPage {
  
 
 
-  async closeModal() {
+  async closeModal2() {
     await this.modalController.dismiss();
+    const loginModal = await this.modalController.create({
+      component: LoginPage, // Assuming LoginPage is the name of your login page component
+    });
+    await loginModal.present();
   }
 
   async signup() {
@@ -115,6 +122,13 @@ export class SignupModalPage {
     toast.present();
   }
 
+  async closeModal() {
+    await this.modalController.dismiss(); // Close the sign-up modal
+    this.navCtrl.navigateRoot('/home'); // Navigate to the home page directly
+  }
+  
+  
+  
 
  
 }
