@@ -21,8 +21,8 @@ const routes: Routes = [
     loadChildren: () => import('./client/client.module').then( m => m.ClientPageModule)
   },
   {
-    path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+    path: 'home-login',
+    loadChildren: () => import('./home-login/dashboard.module').then( m => m.DashboardPageModule)
   },
  
   {
@@ -45,6 +45,12 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
+
+  {
+    path: 'pet-details/:id',
+    loadChildren: () => import('./dashboardpages/pets/pet-details/pet-details.module').then(m => m.PetDetailsPageModule)
+  },
+  
 
 ];
 

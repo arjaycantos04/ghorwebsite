@@ -20,19 +20,31 @@
         </ion-select>
       </ion-col>
       <ion-col size="3" *ngIf="!isSmallScreen">
-        <ion-select aria-label="pet" interface="popover" placeholder="What You Can Do" class="custom-select">
-          <ion-select-option value="pet">Adopt a Pet</ion-select-option>
-          <ion-select-option value="donate">Donate</ion-select-option>
-        </ion-select>
-      </ion-col>
-
+        <ion-select
+        aria-label="pet"
+        interface="popover"
+        placeholder="What You Can Do"
+        class="custom-select"
+        [(ngModel)]="selectedOption"
+        (ionChange)="navigateToSelectedOption()"
+      >
+        <ion-select-option value="pet">Adopt a Pet</ion-select-option>
+        <ion-select-option value="donate">Donate</ion-select-option>
+      </ion-select>
+        
+        
+      </ion-col> 
+      
+      <ion-button aria-label="news" class="donate-button">
+        Donate Now
+      </ion-button>
       <ion-list class="bt">
         <ion-buttons slot="end" class="notification-ellipsis">
-          <ion-button fill="clear"  class="notification-button">
+          <ion-button fill="clear" class="notification-button">
             <ion-icon name="notifications-outline" class="notif"></ion-icon>
-            <ion-badge color="danger" class="notification-badge"></ion-badge>
+            <ion-badge color="danger" class="notification-badge">2</ion-badge>
           </ion-button>
-          <ion-button fill="clear" >
+          <ion-button fill="clear" (click)="presentActionSheet()">
             <ion-icon name="ellipsis-vertical-outline" class="person"></ion-icon>
             </ion-button>
             </ion-buttons>
@@ -67,19 +79,80 @@
   <ion-card-content>
     <ion-card-header>
       <div class="content">
-        <h1>Find a <span>new </span>Pet for you!!</h1>
-        <ion-card-subtitle>See here your desired pets</ion-card-subtitle>
+        <ion-title  style="color: #3880ff;
+        font-weight: bold; font-size: 40px;">Find Your Best Match</ion-title>
+        <span>Pets available in the shelter</span>
       </div>
 
       
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-searchbar  [debounce]="1000" (ionInput)="handleInput($event)" class="searchbar"></ion-searchbar>
-            </ion-col>
+        
+            <ion-toolbar color="light">
+    <ion-grid>
+      <ion-row class="filter-row">
+        <ion-col size="12" size-md="5">
+          <!-- Search bar -->
+          <ion-searchbar
+            [(ngModel)]="searchTerm"
+            (ionClear)="clearSearch()"
+            (ngModelChange)="filterItems()"
+            color="light"
+            placeholder="Search name or breed" class="searchbar"
+          ></ion-searchbar>
+        </ion-col>
+        <ion-col size="12" size-md="2">
+          <!-- Gender filter -->
+          <ion-select
+            [(ngModel)]="filterGender"
+            (ionChange)="filterItems()"
+            class="filter-select"
+            color="light"
+            interface="popover"
+          >
+            <ion-select-option value="">All Genders</ion-select-option>
+            <ion-select-option value="Male">Male</ion-select-option>
+            <ion-select-option value="Female">Female</ion-select-option>
+          </ion-select>
+        </ion-col>
+        <ion-col size="12" size-md="2" class="ion-text-center">
+          
+          <!-- Category filter -->
+          <ion-select
+            [(ngModel)]="filterCategory"
+            (ionChange)="filterItems()"
+            class="filter-select"
+            color="light"
+            interface="popover"
+          > 
+            <ion-select-option value="">All Categories</ion-select-option>
+            <ion-select-option value="Dog">Dog</ion-select-option>
+            <ion-select-option value="Cat">Cat</ion-select-option>
+          </ion-select>
+        </ion-col>
+        <ion-col size="12" size-md="3">
+          <!-- Age filter -->
+          <ion-select
+            [(ngModel)]="filterAge"
+            (ionChange)="filterItems()"
+            class="filter-select"
+            color="light"
+            interface="popover"
+          >
+            <ion-select-option value="">All Ages</ion-select-option>
+            <ion-select-option *ngIf="filterCategory === 'Dog'" value="Adult(1-7 years)">Adult(1-7 years)</ion-select-option>
+            <ion-select-option *ngIf="filterCategory === 'Dog'" value="Young(7-9 months)">Young(7-9 months)</ion-select-option>
+            <ion-select-option *ngIf="filterCategory === 'Dog'" value="Puppy(0-6 months)">Puppy(0-6 months)</ion-select-option>
+            <ion-select-option *ngIf="filterCategory === 'Cat'" value="Mature(7-10 years)">Mature(7-10 years)</ion-select-option>
+            <ion-select-option *ngIf="filterCategory === 'Cat'" value="Adult(1-6 years)">Adult(1-6 years)</ion-select-option>
+            <ion-select-option *ngIf="filterCategory === 'Cat'" value="Kitten(0-1 year)">Kitten(0-1 year)</ion-select-option>
+          </ion-select>
+        </ion-col>
+
+
+              
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
             
-          </ion-row>
-        </ion-grid>
       
 
       
@@ -89,15 +162,14 @@
       <ion-row>
         <ion-col size="6" size-md="3" *ngFor="let pet of results">
 
-            <ion-card button id="open-modal-{{pet.id}}" class="fixed-card">
+            <ion-card button class="fixed-card"  (click)="openPetDetailsModal(pet.id)">
               <img [src]="pet.image" class="fixed-image"/>
               <ion-card-header>
-                <ion-card-title>{{ pet.name }}</ion-card-title>
-                <ion-card-subtitle>
-                   {{ pet.gender }}
-                </ion-card-subtitle>
-                <ion-card-subtitle> {{ pet.age }}</ion-card-subtitle>
-              </ion-card-header>
+                <ion-card-title class="name">{{ pet.name }}</ion-card-title>
+                <!-- <ion-card-title class="category">{{ pet.category }}</ion-card-title>
+                <ion-card-title class="age">{{ pet.age }}</ion-card-title>
+                <ion-card-title class="gender">{{ pet.gender }}</ion-card-title> -->
+                </ion-card-header>
             </ion-card>
     
             <!-- <ion-modal #modal trigger="open-modal-{{pet.id}}">
