@@ -21,6 +21,14 @@ const routes: Routes = [
     loadChildren: () => import('./client/client.module').then( m => m.ClientPageModule)
   },
   {
+<<<<<<< HEAD
+=======
+    path: 'home-login',
+    loadChildren: () => import('./home-login/dashboard.module').then( m => m.DashboardPageModule)
+  },
+ 
+  {
+>>>>>>> 6abcf7bb1a999068ac9f844719a850161e6163bf
     path: 'pets',
     loadChildren: () => import('./dashboardpages/pets/pets.module').then( m => m.PetsPageModule)
   },
@@ -52,6 +60,12 @@ const routes: Routes = [
     path: 'whtwdo',
     loadChildren: () => import('./home-pages/whtwdo/whtwdo.module').then( m => m.WhtwdoPageModule)
   },
+
+  {
+    path: 'pet-details/:id',
+    loadChildren: () => import('./dashboardpages/pets/pet-details/pet-details.module').then(m => m.PetDetailsPageModule)
+  },
+  
 
 ];
 

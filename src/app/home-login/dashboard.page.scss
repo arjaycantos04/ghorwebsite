@@ -1,18 +1,20 @@
+/* home.page.scss */
 
-.content{
-  text-align: center;
-}
 /* Style for the logo image */
 .logo-img {
   height: 50px;
   width: 50px;
   margin-right: 8px;
+ 
   margin-left: 5px;
 }
 
 /* Style for the "What We Are" link */
 .whtware {
+  
+  
   text-decoration: none;
+  
   color: rgba(0, 0, 0, 0.523);
 }
 
@@ -20,44 +22,8 @@
 .custom-select {
   width: 150px;
 }
-<<<<<<< HEAD
 
-/* Style for notification icons */
-.notif {
-  height: 30px;
-  width: 50px;
-}
 
-.person {
-  height: 30px;
-=======
-.notif, 
-.person 
-  {
-  color: black;
-  height:30px;
->>>>>>> 6abcf7bb1a999068ac9f844719a850161e6163bf
-  width: 50px;
-}
-
-.bt {
-<<<<<<< HEAD
-  margin-top: 5px;
-}
-
-/* Additional styling for better visual feedback */
-.fixed-card:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-=======
- margin-top: 10px;
-}
-.name {
-  text-align: center;
-  padding-right: 20px;
-  color: #3880ff;
-  font-weight: bold;
-}
 .cover-title h4{
   color: #1f1f25;
   font-size: 25px;
@@ -66,30 +32,21 @@
   display: inline-block;
   margin-bottom: 1px;
   background: linear-gradient(250deg, #ffffff 20.69%, #290689 50.19%,#fd4766 79.69%);
-  
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
->>>>>>> 6abcf7bb1a999068ac9f844719a850161e6163bf
 }
 
-.fixed-card {
-  width: 90%;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.5s ease;
-}
-
-<<<<<<< HEAD
-.fixed-image {
-  display: block; /* Ensure the image is a block element */
-  margin-left: auto;
-  margin-right: auto;
+.cover-title .h1{
+  color: #8975fb;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 70px;
+  text-transform: inherit;
   width: 100%;
-  height: auto;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-=======
+
+}
+
 .cover-title h1 span{
   color: #001693;
 }
@@ -97,26 +54,6 @@
   color: #ffffff;
   margin-top: 25px;
   margin-bottom: 30px;
-}
-
-.searchbar {
- 
-  padding-top: 25px;
-}
-
-.filter-select {
-  /* Add rounded corners for a card-like appearance */
-  margin-left: 15px;
-  margin-top: 20px;
-
-
-  .find {
-    text-align: center;
- 
-  color: #3880ff;
-  font-weight: bold;
-  }
-     
 }
 
 .container .img{
@@ -140,7 +77,11 @@ line-height: 70px;
 // color: rgba(248, 88, 48, 0.694);
 }
 
-
+.cover-title h2 {
+font-size: 2rem;
+margin-bottom: 1.5rem;
+font-family: 'Poppins', serif;
+}
 
 .cover-title p {
 font-size: 1.2rem;
@@ -189,7 +130,8 @@ object-fit: cover;
 
 /* Style for the Donate Now button */
 .donate-button {
- margin-top: 10px;
+ margin-top: 15px;
+ margin-right: 10px;
 }
 .loginbt {
   margin-top: 10px;
@@ -338,9 +280,10 @@ object-fit: cover;
 }
 
 .youtube {
-  width: 650px;
+  width: 680px;
   height: 350px;
   margin-left: 60px;
+  margin-bottom: 50px;
   
  
   
@@ -373,59 +316,24 @@ margin-left: 400px;
 }
 
 
-.fixed-image {
-  height: 300px;
-  width: 300px;
-  border-radius: 10px;
-}
-.fixed-card {
-  border-radius: 10px;
->>>>>>> 6abcf7bb1a999068ac9f844719a850161e6163bf
+.notif, 
+.person 
+  {
+  color: black;
+  height:30px;
+  width: 50px;
 }
 
-/* Style for the search bar */
-.searchbar {
-  width: 100%;
-  --background: #ffffff;
-  --color: #222222;
-  --placeholder-color: #999;
-  --border-color: #ccc;
-  --border-radius: 20px;
-  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Style for the notification badge */
+  
 .notification-button {
-  position: relative;
+  position: relative; /* Set the position of the button to relative */
+ 
 }
+.bt {
+  margin-top: 10px;
+ }
 
 .notification-badge {
-<<<<<<< HEAD
-  position: absolute;
-  top: 1;
-  right: 1;
-  transform: translate(50%, -50%);
-  font-size: 0.8em;
-  min-width: 1.5em;
-  padding: 0.2em 0.5em;
-  background-color: red;
-  border-radius: 50%;
-}
-
-/* Media query for responsive design */
-@media (min-width: 768px) {
-  .ion-align-items-start {
-    margin-top: 17px;
-  }
-
-  .locationde {
-    margin-left: 20px;
-    margin-left: 20px;
-  }
-}
-
-/* Add your other styles here */
-=======
   position: absolute; /* Set the position of the badge to absolute */
   top: 1; /* Position it at the top */
   right: 1; /* Position it at the right */
@@ -436,9 +344,3 @@ margin-left: 400px;
   background-color: red; /* Example background color for the badge */
   border-radius: 50%; /* Make the badge circular */
 }
-
-.donate-button {
-  margin-top: 15px;
-  margin-right: 10px;
- }
->>>>>>> 6abcf7bb1a999068ac9f844719a850161e6163bf

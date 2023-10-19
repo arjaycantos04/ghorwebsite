@@ -5,6 +5,7 @@ import { ModalController } from '@ionic/angular';
 import { AuthService } from '../../services/auth.service';
 import { SignupModalPage } from './signup-modal/signup-modal.page';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'login-home',
@@ -20,7 +21,8 @@ export class LoginPage {
   constructor(
     private modalController: ModalController,
     private authService: AuthService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private router: Router // Add this line
   ) {}
 
   async login() {
@@ -36,6 +38,8 @@ export class LoginPage {
         await this.authService.signInWithEmailAndPassword(this.user.email, this.user.password);
         // Redirect the user after successful login (you can add your logic here)
         this.showToast('Logged in successfully!', 'success');
+        await this.modalController.dismiss();
+        this.router.navigate(['/home-login']); 
       } else {
         this.showToast('User not found. Please check your email.', 'danger');
       }

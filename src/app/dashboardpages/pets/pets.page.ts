@@ -5,6 +5,10 @@ import { FirestoreService } from 'src/app/firestore.service';
 import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
+import { ActionSheetController } from '@ionic/angular';
+import { PopoverController } from '@ionic/angular';
+
+import { PetDetailsPage } from './pet-details/pet-details.page';
 
 @Component({
   selector: 'app-pets',
@@ -15,8 +19,16 @@ export class PetsPage implements OnInit {
   selectedValue: string = 'all';
   isSmallScreen: boolean = false; // Define and initialize the property
   isBigScreen: boolean = false; // Define and initialize the property
-
+  selectedOption: string = ''; // Initialize with an empty string
+  redirectTo: string = ''; // New variable to hold the selected option for redirection
+  isOptionSelected: boolean = false;
   isModalOpen = false;
+  displayedItems: any[] = [];
+  searchTerm: string = '';
+  filterGender: string = '';
+  filterCategory: string = '';
+  filterAge: string = '';
+  items: any[] = [];
 
   public data: Item[] = [];
   public results: Item[] = [];
@@ -26,7 +38,9 @@ export class PetsPage implements OnInit {
     private navCtrl: NavController,
     private route: ActivatedRoute,
     private modalController: ModalController,
-    private router: Router
+    private router: Router,
+    private actionSheetController: ActionSheetController,// Inject ActionSheetController
+    private popoverController: PopoverController,
   ) { 
     this.checkScreenSize();
   }
@@ -35,6 +49,7 @@ export class PetsPage implements OnInit {
     this.firestoreService.items$.subscribe((data) => {
       this.data = data;
       this.results = [...this.data];
+      this.filterItems();
     });
   }
   
@@ -64,21 +79,21 @@ export class PetsPage implements OnInit {
   
   
 
-  handleInput(event: any) {
-    const query = event.target.value.toLowerCase();
-    this.results = this.data.filter((d) => {
-      const nameMatches = d.name.toLowerCase().indexOf(query) > -1;
-      const genderMatches = d.gender.toLowerCase().indexOf(query) > -1;
-      const typeMatches = d.category.toLowerCase().indexOf(query) > -1;
-      const ageMatches = d.age.toLowerCase().indexOf(query) > -1;
-      const breedMatches = d.breed.toLowerCase().indexOf(query) > -1;
-      return nameMatches || breedMatches || ageMatches || genderMatches || typeMatches;
-    });
-  }
+  // handleInput(event: any) {
+  //   const query = event.target.value.toLowerCase();
+  //   this.results = this.data.filter((d) => {
+  //     const nameMatches = d.name.toLowerCase().indexOf(query) > -1;
+  //     const genderMatches = d.gender.toLowerCase().indexOf(query) > -1;
+  //     const typeMatches = d.category.toLowerCase().indexOf(query) > -1;
+  //     const ageMatches = d.age.toLowerCase().indexOf(query) > -1;
+  //     const breedMatches = d.breed.toLowerCase().indexOf(query) > -1;
+  //     return nameMatches || breedMatches || ageMatches || genderMatches || typeMatches;
+  //   });
+  // }
 
-  adoptPet(petId: number) {
-    this.router.navigate(['/client', petId]);
-  }
+  // adoptPet(petId: number) {
+  //   this.router.navigate(['/client', petId]);
+  // }
 
 
 
@@ -90,6 +105,108 @@ export class PetsPage implements OnInit {
   checkScreenSize() {
     this.isSmallScreen = window.innerWidth <= 768; // Adjust the threshold as needed
     this.isBigScreen = window.innerWidth >= 769; // Adjust the threshold as needed
+  }
+
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      buttons: [
+        {
+          text: 'Logout',
+          icon: 'log-out',
+          role: 'logout',
+          handler: () => {
+            // Handle the "Logout" option click
+            this.logout(); // Call the logout method to perform the logout logic and navigate to the login page
+          },
+        },
+        {
+          text: 'Cancel',
+          icon: 'close',
+          role: 'cancel',
+          handler: () => {
+            // Handle the "Cancel" button click (if needed)
+            console.log('Cancelled');
+          },
+        },
+      ],
+    });
+    await actionSheet.present();
+  }
+
+  navigateToSelectedOption() {
+    if (this.selectedOption === 'pet') {
+      this.router.navigate(['/pets']);
+    } else if (this.selectedOption === 'donate') {
+      // Handle navigation for the "donate" option if needed
+    }
+  }
+
+  
+
+  redirectToOption() {
+    this.selectedOption 
+    if (this.selectedOption === 'pet') {
+      this.router.navigate(['/pets']);
+    }
+  }
+
+
+
+  onSelectChange(event: CustomEvent<string>) {
+    if (event.detail) {
+      this.isOptionSelected = false;
+    } else {
+      this.isOptionSelected = false;
+    }
+  }
+
+  filterItems() {
+    this.results = this.data.filter((item) => {
+      const lowerCaseName = item.name.toLowerCase();
+      const lowerCaseBreed = item.breed.toLowerCase();
+  
+      const isNameMatch = lowerCaseName.includes(this.searchTerm.toLowerCase());
+      const isBreedMatch = lowerCaseBreed.includes(this.searchTerm.toLowerCase());
+      const isGenderMatch = this.filterGender === '' || item.gender === this.filterGender;
+      const isCategoryMatch = this.filterCategory === '' || item.category === this.filterCategory;
+      const isAgeMatch = this.filterAge === '' || item.age === this.filterAge;
+  
+      return (isNameMatch || isBreedMatch) && isGenderMatch && isCategoryMatch && isAgeMatch;
+    });
+  }
+
+  async openPetDetailsModal(petId: number) {
+    
+    console.log('Modal opening with petId:', petId); // Add this line
+    const modal = await this.modalController.create({
+      component: PetDetailsPage,
+      componentProps: {
+        petId: petId
+      }
+    });
+    return await modal.present();
+  }
+  
+  
+  
+  
+  
+  
+  clearSearch() {
+    this.searchTerm = '';
+    this.filterItems();
+  }
+  
+  
+  
+  
+  
+
+  logout() {
+    // Perform any necessary logout logic here, e.g., clearing user data, sign out, etc.
+  
+    // Navigate to the login page
+    this.navCtrl.navigateRoot('/home'); // Replace '/login' with the actual route to your login page
   }
 }
 
