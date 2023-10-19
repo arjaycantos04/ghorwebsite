@@ -1,0 +1,63 @@
+.logo-img {
+    height: 50px;
+    width: 50px;
+    margin-right: 8px;
+    margin-left: 5px;
+  }
+
+/* donate.page.scss */
+
+.side-panel {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+  }
+  
+  .side-panel h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  ion-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+ion-card {
+    background: rgba(255, 255, 255, 0.2); /* Adjust the alpha value for transparency */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust the shadow as needed */
+    overflow: hidden; /* Clip content inside the card */
+  }
+  
+  ion-list {
+    --ion-item-background: transparent; /* Set the background to transparent */
+    --ion-item-text-color: #fff; /* Text color */
+    --ion-item-padding-start: 0; /* Adjust padding as needed */
+    --ion-item-padding-end: 0; /* Adjust padding as needed */
+    --ion-item-padding-top: 10px; /* Adjust padding as needed */
+    --ion-item-padding-bottom: 10px; /* Adjust padding as needed */
+    --ion-item-divider-width: 0; /* Remove the divider line */
+
+    ion-item {
+        --border-style: none;
+      }
+  }
+  
+  ion-label {
+    font-weight: bold;
+  }
+  
+  ion-note {
+    color: #686868;
+    display: flex;
+    flex-direction: column; /* Align notes in a column */
+    align-items: flex-end; /* Align notes to the right */
+    white-space: nowrap; /* Prevent line breaks */
+  }
+
+  

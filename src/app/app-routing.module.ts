@@ -21,11 +21,6 @@ const routes: Routes = [
     loadChildren: () => import('./client/client.module').then( m => m.ClientPageModule)
   },
   {
-    path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
-  },
- 
-  {
     path: 'pets',
     loadChildren: () => import('./dashboardpages/pets/pets.module').then( m => m.PetsPageModule)
   },
@@ -44,6 +39,18 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'donate',
+    loadChildren: () => import('./home-pages/donate/donate.module').then( m => m.DonatePageModule)
+  },
+  {
+    path: 'whtware',
+    loadChildren: () => import('./home-pages/whtware/whtware.module').then( m => m.WhtwarePageModule)
+  },
+  {
+    path: 'whtwdo',
+    loadChildren: () => import('./home-pages/whtwdo/whtwdo.module').then( m => m.WhtwdoPageModule)
   },
 
 ];

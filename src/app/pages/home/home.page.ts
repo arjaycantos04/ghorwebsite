@@ -2,7 +2,6 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { LoginPage } from '../login/login.page';
 import { MenuController } from '@ionic/angular';
-import Swiper from 'swiper';
 import { register } from 'swiper/element/bundle';
 import { AlertController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
@@ -57,5 +56,10 @@ export class HomePage implements OnInit {
   checkScreenSize() {
     this.isSmallScreen = window.innerWidth <= 768; // Adjust the threshold as needed
     this.isBigScreen = window.innerWidth >= 769; // Adjust the threshold as needed
+  }
+
+  openDonatePage() {
+    // Navigate to the donate page programmatically
+    this.router.navigate(['/donate']);
   }
 }

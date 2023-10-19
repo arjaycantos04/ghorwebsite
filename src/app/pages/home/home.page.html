@@ -20,7 +20,7 @@
       <ion-col size="3" *ngIf="!isSmallScreen">
         <ion-select aria-label="pet" interface="popover" placeholder="What You Can Do" class="custom-select">
           <ion-select-option value="pet">Adopt a Pet</ion-select-option>
-          <ion-select-option value="donate">Donate</ion-select-option>
+          <ion-select-option value="donate" (click)="openDonatePage()" >Donate</ion-select-option>
         </ion-select>
       </ion-col>
       
@@ -188,4 +188,5 @@
     </ion-row>
 </ion-grid>
 
+<app-footer></app-footer>
  </ion-content>
